@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- SEO meta tags -->
+  <title>Biogas Training & Consultancy | Grener Bio</title>
+  <meta name="description" content="Professional biogas training and consultancy services: entrepreneurship programs, commercial biogas bottling plants, community units, electrification projects, and business loan facilitation.">
+  <meta name="keywords" content="biogas training, biogas consultancy, biogas entrepreneurship, biogas bottling plants, community biogas, renewable energy training">
+  <!-- Open Graph / social -->
+  <meta property="og:title" content="Biogas Training & Consultancy – Grener Bio">
+  <meta property="og:description" content="High-end training and consulting for biogas projects: individual, domestic, commercial, and industrial biogas bottling plants.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.grenerbio.com/pages/services.html">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1581092335871-4c7ff3f3f6d5?q=80&w=2070&auto=format&fit=crop">
+  <!-- favicon (same as index) -->
+  <link rel="icon" type="image/png" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%232F855A'/%3E%3Cpath d='M30 60 L45 25 L60 60 L52 60 L45 40 L38 60Z' fill='white'/%3E%3C/svg%3E">
+  <!-- Font & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    /* Same custom styles as index page */
+    body {
+      font-family: 'Inter', 'Poppins', sans-serif;
+      color: #1e1e1e;
+      background-color: #ffffff;
+      scroll-behavior: smooth;
+    }
+    h1, h2, h3, .heading-font {
+      font-family: 'Poppins', 'Inter', sans-serif;
+      font-weight: 600;
+    }
+    .text-green-brand {
+      color: #2F855A;
+    }
+    .bg-green-brand {
+      background-color: #2F855A;
+    }
+    .border-green-brand {
+      border-color: #2F855A;
+    }
+    .bg-charcoal {
+      background-color: #2d2d2d;
+    }
+    .text-charcoal {
+      color: #2d2d2d;
+    }
+    .btn-primary {
+      background-color: #2F855A;
+      color: white;
+      padding: 0.75rem 2rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      transition: all 0.2s;
+      box-shadow: 0 4px 6px -1px rgba(47,133,90,0.2);
+    }
+    .btn-primary:hover {
+      background-color: #1f5f3f;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3px rgba(47,133,90,0.3);
+    }
+    .btn-outline {
+      background-color: transparent;
+      border: 2px solid #2F855A;
+      color: #2F855A;
+      padding: 0.75rem 2rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+    .btn-outline:hover {
+      background-color: #2F855A;
+      color: white;
+    }
+    /* sticky nav - same as index */
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background-color: rgba(255,255,255,0.9);
+      border-bottom: 1px solid #eaeaea;
+    }
+    .nav-menu {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-menu a {
+      font-weight: 500;
+      transition: color 0.2s;
+      position: relative;
+      padding: 0.5rem 0;
+      text-decoration: none;
+      color: #2d2d2d;
+    }
+    .nav-menu a:hover {
+      color: #2F855A;
+    }
+    .nav-menu a.active {
+      color: #2F855A;
+      font-weight: 600;
+    }
+    .nav-menu a.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #2F855A;
+      border-radius: 2px;
+    }
+    /* mobile menu */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+    .bar {
+      width: 25px;
+      height: 3px;
+      background-color: #2d2d2d;
+      transition: all 0.3s ease-in-out;
+    }
+    .hamburger.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+    .mobile-nav-menu {
+      display: none;
+      background: white;
+      width: 100%;
+      padding: 1rem;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+      list-style: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 40;
+    }
+    .mobile-nav-menu.active {
+      display: block;
+    }
+    .mobile-nav-menu li {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #eaeaea;
+    }
+    .mobile-nav-menu li:last-child {
+      border-bottom: none;
+    }
+    .mobile-nav-menu a {
+      text-decoration: none;
+      color: #2d2d2d;
+      font-weight: 500;
+      display: block;
+    }
+    .mobile-nav-menu a:hover,
+    .mobile-nav-menu a.active {
+      color: #2F855A;
+    }
+    @media(max-width:768px) {
+      .hamburger {
+        display: flex;
+      }
+      .nav-menu {
+        display: none;
+      }
+      .desktop-only {
+        display: none;
+      }
+    }
+    /* Service-specific styles */
+    .service-card {
+      background: white;
+      border-radius: 2rem;
+      padding: 2rem;
+      transition: all 0.3s;
+      border: 1px solid #eaeaea;
+      height: 100%;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(47,133,90,0.1), 0 10px 10px -5px rgba(47,133,90,0.04);
+      border-color: #2F855A;
+    }
+    .service-icon {
+      background-color: #e6f4ea;
+      color: #2F855A;
+      width: 70px;
+      height: 70px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      margin-bottom: 1.5rem;
+    }
+    .program-level {
+      background: #f5f7f5;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      transition: 0.2s;
+    }
+    .program-level:hover {
+      background: white;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+    }
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #2F855A;
+      line-height: 1.2;
+    }
+    .section-padding {
+      padding: 5rem 1rem;
+    }
+    .footer-link {
+      color: #ccc;
+      transition: 0.2s;
+      text-decoration: none;
+    }
+    .footer-link:hover {
+      color: white;
+    }
+    /* Gallery hover animations */
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1.5rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      height: 320px;
+      transition: all 0.3s ease;
+    }
+    .gallery-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 30px -12px rgba(47, 133, 90, 0.3);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.3), transparent);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.5rem;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      color: white;
+    }
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+    .gallery-overlay h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+      transform: translateY(20px);
+      transition: transform 0.4s ease 0.1s;
+    }
+    .gallery-item:hover .gallery-overlay h3 {
+      transform: translateY(0);
+    }
+    .gallery-overlay p {
+      font-size: 0.9rem;
+      color: #d1d5db;
+      transform: translateY(20px);
+      transition: transform 0.4s ease 0.2s;
+    }
+    .gallery-item:hover .gallery-overlay p {
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <!-- STICKY NAVIGATION - Same as index but with Services as active -->
+  <nav class="sticky-nav px-6 md:px-12 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-2">
+      <img src="../logo1.png" alt="biogas" width="40" height="40" style="object-fit: contain;">
+      <span class="font-bold text-2xl tracking-tight text-charcoal">Grener Bio</span>
+    </div>
+
+    <!-- Desktop Menu -->
+    <ul class="nav-menu">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="installation.html">Installation</a></li>
+      <li><a href="tutorials.html">Tutorials</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <div class="flex gap-3 items-center">
+      <a href="contact.html" class="btn-primary hidden lg:inline-block text-sm">Get Quote</a>
+      <a href="contact.html#inspection" class="btn-outline hidden lg:inline-block text-sm">Book Inspection</a>
+
+      <!-- Mobile Hamburger -->
+      <button class="hamburger" id="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <ul class="mobile-nav-menu" id="mobileMenu">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="services.html" class="active">Services</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="installation.html">Installation</a></li>
+    <li><a href="tutorials.html">Tutorials</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li class="flex gap-3 pt-4">
+      <a href="contact.html" class="btn-primary text-sm flex-1 text-center">Get Quote</a>
+      <a href="contact.html#inspection" class="btn-outline text-sm flex-1 text-center">Book Inspection</a>
+    </li>
+  </ul>
+
+  <!-- PAGE HERO - Services -->
+  <section class="section-padding pt-10 md:pt-16 bg-white" data-aos="fade-up">
+    <div class="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12 px-4">
+      <div class="flex-1 text-center md:text-left">
+        <span class="text-green-brand font-semibold tracking-wider">EXPERT CONSULTANCY & TRAINING</span>
+        <h1 class="text-4xl md:text-5xl font-bold leading-tight text-charcoal mt-4">Biogas Training &<br><span class="text-green-brand">Consultancy Services</span></h1>
+        <p class="text-lg text-gray-600 mt-6 max-w-lg mx-auto md:mx-0">High-end training and consulting for biogas projects — from individual households to industrial bottling plants. We empower entrepreneurs and organizations to succeed in renewable energy.</p>
+        <div class="flex flex-wrap gap-4 justify-center md:justify-start mt-8">
+          <a href="contact.html" class="btn-primary">Enroll in Training →</a>
+          <a href="#consulting-packages" class="btn-outline">View Consulting Packages</a>
+        </div>
+        <div class="flex items-center justify-center md:justify-start gap-6 mt-8 text-green-brand font-medium">
+          <span><i class="fas fa-graduation-cap mr-1"></i> 200+ trained</span>
+          <span><i class="fas fa-briefcase mr-1"></i> 50+ projects</span>
+          <span><i class="fas fa-trophy mr-1"></i> Govt. approved</span>
+        </div>
+      </div>
+      <div class="flex-1">
+        <img src="../bio7.jpeg" alt="Biogas Training Session" class="rounded-3xl shadow-2xl object-cover w-full h-auto" style="max-height:420px;">
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY SECTION WITH HOVER ANIMATION - 4 PHOTOS -->
+  <section class="py-20 px-4 bg-gray-50" data-aos="fade-up">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12">
+        <span class="text-green-brand font-semibold tracking-wider">OUR WORK IN ACTION</span>
+        <h2 class="text-4xl font-bold mt-2 text-charcoal">Training & Project Gallery</h2>
+        <p class="text-gray-600 text-lg max-w-3xl mx-auto mt-4">Glimpses of our training sessions, installations, and customer interactions — hover over images to see details</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Gallery Item 1 -->
+        <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+          <img src="../service1.jpg" alt="Biogas Training Session">
+          <div class="gallery-overlay">
+            <h3>Entrepreneurship Training</h3>
+            <p>Batch of 15 aspiring biogas entrepreneurs learning installation techniques</p>
+          </div>
+        </div>
+
+        <!-- Gallery Item 2 -->
+        <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+          <img src="../service2.jpg" alt="Biogas Plant Installation">
+          <div class="gallery-overlay">
+            <h3>Commercial Biogas Plant</h3>
+            <p>5 TPD bottling plant commissioning, Maharashtra</p>
+          </div>
+        </div>
+
+        <!-- Gallery Item 3 -->
+        <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
+          <img src="../service3.jpg" alt="Community Biogas">
+          <div class="gallery-overlay">
+            <h3>Community Biogas Unit</h3>
+            <p>Serving 200+ families at Greenwoods Apartment, Pune</p>
+          </div>
+        </div>
+
+        <!-- Gallery Item 4 -->
+        <div class="gallery-item" data-aos="fade-up" data-aos-delay="400">
+          <img src="../service4.jpg" alt="Customer Handover">
+          <div class="gallery-overlay">
+            <h3>Customer Handover</h3>
+            <p>Training residents on daily operations and maintenance</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- View All Gallery Button -->
+      <div class="text-center mt-12">
+        <a href="gallery.html" class="btn-outline inline-flex items-center gap-2">
+          View Full Gallery <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR SERVICES OVERVIEW -->
+  <section class="bg-white py-20 px-4" data-aos="fade-up">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="text-green-brand font-semibold tracking-wider">WHAT WE OFFER</span>
+        <h2 class="text-4xl font-bold mt-2 text-charcoal">Comprehensive Biogas Solutions</h2>
+        <p class="text-gray-600 text-lg max-w-3xl mx-auto mt-4">End-to-end support for your biogas journey — from concept to commissioning and beyond.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Service 1: Entrepreneurship Programs -->
+        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-3">Entrepreneurship Programs</h3>
+          <p class="text-gray-600 mb-4">Comprehensive training for aspiring biogas entrepreneurs. Learn business models, technical skills, and market strategies.</p>
+          <ul class="space-y-2 text-gray-600">
+            <li><i class="fas fa-check-circle text-green-brand mr-2"></i>Business planning & modeling</li>
+            <li><i class="fas fa-check-circle text-green-brand mr-2"></i>Technical training</li>
+            <li><i class="fas fa-check-circle text-green-brand mr-2"></i>Market entry strategies</li>
+          </ul>
+        </div>
+
+        <!-- Service 2: Domestic Biogas -->
+        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-icon">
+            <i class="fas fa-home"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-3">Domestic Biogas Plants</h3>
+          <p class="text-gray-600 mb-4">Consulting for individual households and small communities. Customized solutions for urban and rural settings.</p>
+          <ul class="space-y-2 text-gray-600">
+            <li><i class="fas fa-check-circle text-green-brand mr-2"></i>Site assessment & design</li>
+            <li><i class="fas fa-check-circle text-green-brand mr-2"></i>Installation supervision</li>
+            <li><i class="fas fa-check-circle text-green-brand mr-2"></i>Maintenance training</li>
+          </ul>
+        </div>
+
+        <!-- Service 3: Commercial & Industrial -->
+        <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-icon">
+            <i class="fas fa-industry"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-3">Commercial & Industrial</h3>
+          <p class="text-gray-600 mb-4">Large-scale biogas bottling plants for restaurants, hotels, and industrial applications.</p>
+          <ul class="space-y-2 text-gray-600">
+            <li><i class="fas fa-check-circle text-green-brand mr-2"></i>Biogas bottling plants</li>
+            <li><i class="fas fa-check-circle text-green-brand mr-2"></i>Industrial waste solutions</li>
+            <li><i class="fas fa-check-circle text-green-brand mr-2"></i>ROI optimization</li>
+          </ul>
+        </div>
+
+        <!-- Service 4: Community Units -->
+        <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="service-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-3">Community Level Units</h3>
+          <p class="text-gray-600 mb-4">Biogas solutions for apartments, hostels, villages, and institutional campuses.</p>
+          <ul class="space-y-2 text-gray-600">
+            <li><i class="fas fa-check-circle text-green-brand mr-2"></i>Centralized waste processing</li>
+            <li><i class="fas fa-check-circle text-green-brand mr-2"></i>Gas distribution networks</li>
+            <li><i class="fas fa-check-circle text-green-brand mr-2"></i>Community engagement</li>
+          </ul>
+        </div>
+
+        <!-- Service 5: Electrification & Lighting -->
+        <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+          <div class="service-icon">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-3">Electrification Systems</h3>
+          <p class="text-gray-600 mb-4">Biogas-powered electricity generation for off-grid applications and lighting solutions.</p>
+          <ul class="space-y-2 text-gray-600">
+            <li><i class="fas fa-check-circle text-green-brand mr-2"></i>Generator integration</li>
+            <li><i class="fas fa-check-circle text-green-brand mr-2"></i>Off-grid power systems</li>
+            <li><i class="fas fa-check-circle text-green-brand mr-2"></i>Energy storage solutions</li>
+          </ul>
+        </div>
+
+        <!-- Service 6: Business Support -->
+        <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+          <div class="service-icon">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-3">Business Support Services</h3>
+          <p class="text-gray-600 mb-4">Complete assistance for entrepreneurs including sales, marketing, and loan facilitation.</p>
+          <ul class="space-y-2 text-gray-600">
+            <li><i class="fas fa-check-circle text-green-brand mr-2"></i>Sales & marketing layout</li>
+            <li><i class="fas fa-check-circle text-green-brand mr-2"></i>Business loan paperwork</li>
+            <li><i class="fas fa-check-circle text-green-brand mr-2"></i>Government approvals</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAINING PROGRAMS BY LEVEL -->
+  <section id="training-levels" class="py-20 px-4 bg-gray-50" data-aos="fade-up">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-charcoal">Training Programs</h2>
+        <p class="text-gray-600 text-lg max-w-3xl mx-auto mt-4">Structured learning paths for different experience levels and goals</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Beginner Level -->
+        <div class="program-level" data-aos="fade-up" data-aos-delay="100">
+          <div class="w-16 h-16 bg-green-brand/10 rounded-2xl flex items-center justify-center mb-6">
+            <i class="fas fa-seedling text-3xl text-green-brand"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-2">Foundation Program</h3>
+          <p class="text-green-brand font-semibold mb-4">2 Days | Beginner</p>
+          <p class="text-gray-600 mb-6">Perfect for homeowners, students, and first-time biogas enthusiasts.</p>
+          <ul class="space-y-3 text-gray-600">
+            <li><i class="fas fa-check text-green-brand mr-2"></i>Biogas fundamentals</li>
+            <li><i class="fas fa-check text-green-brand mr-2"></i>System components</li>
+            <li><i class="fas fa-check text-green-brand mr-2"></i>Daily operations</li>
+            <li><i class="fas fa-check text-green-brand mr-2"></i>Safety practices</li>
+          </ul>
+        </div>
+
+        <!-- Intermediate Level -->
+        <div class="program-level" data-aos="fade-up" data-aos-delay="200">
+          <div class="w-16 h-16 bg-green-brand/10 rounded-2xl flex items-center justify-center mb-6">
+            <i class="fas fa-chart-pie text-3xl text-green-brand"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-2">Entrepreneurship Program</h3>
+          <p class="text-green-brand font-semibold mb-4">5 Days | Intermediate</p>
+          <p class="text-gray-600 mb-6">For aspiring biogas business owners and project developers.</p>
+          <ul class="space-y-3 text-gray-600">
+            <li><i class="fas fa-check text-green-brand mr-2"></i>Business model development</li>
+            <li><i class="fas fa-check text-green-brand mr-2"></i>Project feasibility</li>
+            <li><i class="fas fa-check text-green-brand mr-2"></i>Installation techniques</li>
+            <li><i class="fas fa-check text-green-brand mr-2"></i>Customer acquisition</li>
+            <li><i class="fas fa-check text-green-brand mr-2"></i>Loan & subsidy paperwork</li>
+          </ul>
+        </div>
+
+        <!-- Advanced Level -->
+        <div class="program-level" data-aos="fade-up" data-aos-delay="300">
+          <div class="w-16 h-16 bg-green-brand/10 rounded-2xl flex items-center justify-center mb-6">
+            <i class="fas fa-crown text-3xl text-green-brand"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-2">Master Class</h3>
+          <p class="text-green-brand font-semibold mb-4">10 Days | Advanced</p>
+          <p class="text-gray-600 mb-6">For engineers, consultants, and large-scale project developers.</p>
+          <ul class="space-y-3 text-gray-600">
+            <li><i class="fas fa-check text-green-brand mr-2"></i>Industrial biogas design</li>
+            <li><i class="fas fa-check text-green-brand mr-2"></i>Bottling plant technology</li>
+            <li><i class="fas fa-check text-green-brand mr-2"></i>Electrification systems</li>
+            <li><i class="fas fa-check text-green-brand mr-2"></i>Advanced troubleshooting</li>
+            <li><i class="fas fa-check text-green-brand mr-2"></i>Mentorship program</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="contact.html" class="btn-primary inline-block">Request Training Calendar →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONSULTING PACKAGES -->
+  <section id="consulting-packages" class="py-20 px-4 bg-white" data-aos="fade-up">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="text-green-brand font-semibold tracking-wider">CONSULTANCY</span>
+        <h2 class="text-4xl font-bold mt-2 text-charcoal">End-to-End Project Support</h2>
+        <p class="text-gray-600 text-lg max-w-3xl mx-auto mt-4">From concept to commissioning, we guide you through every step</p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-12">
+        <!-- Left: Consulting Services List -->
+        <div data-aos="fade-right">
+          <div class="space-y-6">
+            <div class="flex gap-4 items-start">
+              <div class="w-12 h-12 bg-green-brand/10 rounded-full flex-shrink-0 flex items-center justify-center">
+                <i class="fas fa-search text-green-brand"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold">Feasibility Studies</h3>
+                <p class="text-gray-600">Site assessment, waste analysis, and technical feasibility for your specific location and requirements.</p>
+              </div>
+            </div>
+            <div class="flex gap-4 items-start">
+              <div class="w-12 h-12 bg-green-brand/10 rounded-full flex-shrink-0 flex items-center justify-center">
+                <i class="fas fa-drafting-compass text-green-brand"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold">System Design & Engineering</h3>
+                <p class="text-gray-600">Custom biogas plant design with detailed engineering drawings and specifications.</p>
+              </div>
+            </div>
+            <div class="flex gap-4 items-start">
+              <div class="w-12 h-12 bg-green-brand/10 rounded-full flex-shrink-0 flex items-center justify-center">
+                <i class="fas fa-file-alt text-green-brand"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold">Project Documentation</h3>
+                <p class="text-gray-600">DPR preparation, subsidy applications, and government approval paperwork.</p>
+              </div>
+            </div>
+            <div class="flex gap-4 items-start">
+              <div class="w-12 h-12 bg-green-brand/10 rounded-full flex-shrink-0 flex items-center justify-center">
+                <i class="fas fa-hand-holding-usd text-green-brand"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold">Loan Facilitation</h3>
+                <p class="text-gray-600">Complete assistance with business loan paperwork and bank presentations.</p>
+              </div>
+            </div>
+            <div class="flex gap-4 items-start">
+              <div class="w-12 h-12 bg-green-brand/10 rounded-full flex-shrink-0 flex items-center justify-center">
+                <i class="fas fa-chart-bar text-green-brand"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold">Sales & Marketing Strategy</h3>
+                <p class="text-gray-600">Custom marketing plans, sales playbooks, and business development support.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Stats & CTA -->
+        <div data-aos="fade-left" class="bg-gray-50 rounded-3xl p-8 shadow-xl">
+          <h3 class="text-2xl font-bold mb-6">Why Choose Our Consultancy?</h3>
+          <div class="space-y-6">
+            <div class="flex justify-between items-center border-b border-gray-200 pb-4">
+              <span class="text-gray-600">Projects Delivered</span>
+              <span class="stat-number">50+</span>
+            </div>
+            <div class="flex justify-between items-center border-b border-gray-200 pb-4">
+              <span class="text-gray-600">Years of Experience</span>
+              <span class="stat-number">10+</span>
+            </div>
+            <div class="flex justify-between items-center border-b border-gray-200 pb-4">
+              <span class="text-gray-600">Loan Success Rate</span>
+              <span class="stat-number">95%</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-gray-600">Happy Clients</span>
+              <span class="stat-number">200+</span>
+            </div>
+          </div>
+          <div class="mt-8 p-4 bg-green-brand/5 rounded-2xl">
+            <p class="text-sm text-gray-600 mb-2"><i class="fas fa-quote-left text-green-brand mr-2"></i>Grener Bio's consultancy helped us secure ₹50L loan and set up our commercial biogas plant. Their end-to-end support was invaluable.</p>
+            <p class="font-semibold">— Priya Sharma, EcoFuel Industries</p>
+          </div>
+          <div class="mt-8">
+            <a href="contact.html" class="btn-primary w-full text-center block">Schedule a Consultation</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUCCESS STORIES / CASE STUDIES -->
+  <section class="py-20 px-4 bg-gray-50" data-aos="fade-up">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-4xl font-bold text-center text-charcoal mb-16">Success Stories</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Case Study 1 -->
+        <div class="flex flex-col md:flex-row gap-6 items-start bg-white p-6 rounded-2xl shadow-md">
+          <div class="w-24 h-24 bg-green-brand/10 rounded-2xl flex-shrink-0 flex items-center justify-center">
+            <i class="fas fa-building text-4xl text-green-brand"></i>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold">Commercial Biogas Bottling Plant</h3>
+            <p class="text-green-brand font-semibold mb-2">GreenFuel Industries, Maharashtra</p>
+            <p class="text-gray-600">End-to-end consultancy for a 5 TPD biogas bottling plant. Assisted with DPR, loan approval of ₹2.5Cr, and technical design. Plant now generates 600 kg of bio-CNG daily.</p>
+          </div>
+        </div>
+        <!-- Case Study 2 -->
+        <div class="flex flex-col md:flex-row gap-6 items-start bg-white p-6 rounded-2xl shadow-md">
+          <div class="w-24 h-24 bg-green-brand/10 rounded-2xl flex-shrink-0 flex items-center justify-center">
+            <i class="fas fa-users text-4xl text-green-brand"></i>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold">Community Biogas for Apartments</h3>
+            <p class="text-green-brand font-semibold mb-2">Greenwoods Residency, Pune</p>
+            <p class="text-gray-600">Designed and supervised installation of a community biogas unit for 200 households. Trained residents on operations. Saves ₹80,000/month on LPG.</p>
+          </div>
+        </div>
+        <!-- Case Study 3 -->
+        <div class="flex flex-col md:flex-row gap-6 items-start bg-white p-6 rounded-2xl shadow-md">
+          <div class="w-24 h-24 bg-green-brand/10 rounded-2xl flex-shrink-0 flex items-center justify-center">
+            <i class="fas fa-tractor text-4xl text-green-brand"></i>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold">Dairy Farm Biogas Project</h3>
+            <p class="text-green-brand font-semibold mb-2">Ranganathan Dairy, Karnataka</p>
+            <p class="text-gray-600">Converted cattle dung from 200 cows into cooking gas for workers' quarters and electricity for milking machines. Zero waste, complete energy solution.</p>
+          </div>
+        </div>
+        <!-- Case Study 4 -->
+        <div class="flex flex-col md:flex-row gap-6 items-start bg-white p-6 rounded-2xl shadow-md">
+          <div class="w-24 h-24 bg-green-brand/10 rounded-2xl flex-shrink-0 flex items-center justify-center">
+            <i class="fas fa-school text-4xl text-green-brand"></i>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold">Hostel Biogas Installation</h3>
+            <p class="text-green-brand font-semibold mb-2">MIT Hostel, Pune</p>
+            <p class="text-gray-600">Installed biogas plant processing 150 kg daily kitchen waste from 500 students. Supplies cooking gas for hostel kitchen, saving ₹45,000/month.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+<section class="bg-charcoal text-white py-20 px-4 text-center" data-aos="fade-up">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-4xl font-bold mb-6">Ready to Start Your Biogas Journey?</h2>
+    <p class="text-gray-300 text-lg mb-8">Join our next training batch or book a consultation with our experts.</p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a href="contact.html" class="btn-outline border-2 border-white text-white hover:border-white hover:shadow-[0_0_15px_rgba(255,255,255,0.7)] hover:bg-transparent hover:text-white font-semibold px-8 py-3 rounded-full transition-all duration-300">Enroll Now</a>
+      <a href="contact.html#consultation" class="btn-outline border-2 border-white text-white hover:border-white hover:shadow-[0_0_15px_rgba(255,255,255,0.7)] hover:bg-transparent hover:text-white font-semibold px-8 py-3 rounded-full transition-all duration-300">Talk to an Expert</a>
+    </div>
+  </div>
+</section>
+
+  <!-- FOOTER (same as index) -->
+  <footer class="bg-charcoal text-white pt-16 pb-8 px-6">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+      <div>
+        <div class="flex items-center gap-2"><i class="fas fa-leaf text-3xl text-green-brand"></i><span class="font-bold text-2xl">Grener Bio</span></div>
+        <p class="text-sm text-gray-400 mt-4"><i class="fas fa-map-pin mr-2"></i>31/16, Thiruvalluvar Street,<br>Nehru Nagar, Velachery,<br>Chennai - 600042</p>
+        <p class="text-sm text-gray-400 mt-2"><i class="fas fa-phone mr-2"></i>+91 8124820036</p>
+      </div>
+      <div>
+        <h4 class="font-bold text-lg">Quick links</h4>
+        <ul class="mt-4 space-y-2 text-gray-400">
+          <li><a href="about.html" class="footer-link">About us</a></li>
+          <li><a href="products.html" class="footer-link">Products</a></li>
+          <li><a href="services.html" class="footer-link">Services</a></li>
+          <li><a href="projects.html" class="footer-link">Projects</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-lg">Support</h4>
+        <ul class="mt-4 space-y-2 text-gray-400">
+          <li><a href="contact.html" class="footer-link">Contact</a></li>
+          <li><a href="installation.html" class="footer-link">Installation</a></li>
+          <li><a href="tutorials.html" class="footer-link">Tutorials</a></li>
+          <li><a href="#" class="footer-link">Privacy policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-lg">Follow us</h4>
+        <div class="flex gap-4 mt-4 text-2xl">
+          <a href="#" class="footer-link"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="footer-link"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="footer-link"><i class="fab fa-facebook"></i></a>
+        </div>
+        <p class="text-xs text-gray-500 mt-8">© 2025 Grener Bio. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Initialize AOS
+    AOS.init({ duration: 1000, once: true });
+
+    // Mobile menu functionality
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    if (hamburger && mobileMenu) {
+      hamburger.addEventListener('click', function() {
+        this.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+      });
+    }
+
+    // Set active state for mobile menu links based on current page
+    const currentPage = 'services.html';
+    const mobileLinks = mobileMenu ? mobileMenu.getElementsByTagName('a') : [];
+    for (let link of mobileLinks) {
+      if (link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
+      }
+    }
+  </script>
+</body>
+</html>

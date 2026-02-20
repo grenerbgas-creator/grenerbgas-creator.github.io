@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - Grener Bio | Our Installations</title>
+  <meta name="description" content="Explore Grener Bio's successful biogas installations across India. See how we've helped homes, restaurants, and industries go green.">
+  <link rel="icon" type="image/png" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%232F855A'/%3E%3Cpath d='M30 60 L45 25 L60 60 L52 60 L45 40 L38 60Z' fill='white'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    /* Base Styles */
+    body {
+      font-family: 'Inter', 'Poppins', sans-serif;
+      color: #1e1e1e;
+      background-color: #ffffff;
+      scroll-behavior: smooth;
+    }
+    h1, h2, h3, .heading-font {
+      font-family: 'Poppins', 'Inter', sans-serif;
+      font-weight: 600;
+    }
+    .text-green-brand {
+      color: #2F855A;
+    }
+    .bg-green-brand {
+      background-color: #2F855A;
+    }
+    .border-green-brand {
+      border-color: #2F855A;
+    }
+    .bg-charcoal {
+      background-color: #2d2d2d;
+    }
+    .text-charcoal {
+      color: #2d2d2d;
+    }
+
+    /* Button Styles */
+    .btn-primary {
+      background-color: #2F855A;
+      color: white;
+      padding: 0.75rem 2rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      transition: all 0.2s;
+      box-shadow: 0 4px 6px -1px rgba(47,133,90,0.2);
+      display: inline-block;
+    }
+    .btn-primary:hover {
+      background-color: #1f5f3f;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3px rgba(47,133,90,0.3);
+    }
+    .btn-outline {
+      background-color: transparent;
+      border: 2px solid #2F855A;
+      color: #2F855A;
+      padding: 0.75rem 2rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      transition: 0.2s;
+      display: inline-block;
+    }
+    .btn-outline:hover {
+      background-color: #2F855A;
+      color: white;
+    }
+
+    /* Navigation */
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background-color: rgba(255,255,255,0.9);
+      border-bottom: 1px solid #eaeaea;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+    .logo span {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #2d2d2d;
+    }
+    .nav-menu {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-menu a {
+      font-weight: 500;
+      transition: color 0.2s;
+      position: relative;
+      padding: 0.5rem 0;
+      text-decoration: none;
+      color: #2d2d2d;
+    }
+    .nav-menu a:hover {
+      color: #2F855A;
+    }
+    .nav-menu a.active {
+      color: #2F855A;
+      font-weight: 600;
+    }
+    .nav-menu a.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #2F855A;
+      border-radius: 2px;
+    }
+
+    /* Mobile Menu */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+    .bar {
+      width: 25px;
+      height: 3px;
+      background-color: #2d2d2d;
+      transition: all 0.3s ease-in-out;
+    }
+    .hamburger.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+    .mobile-nav-menu {
+      display: none;
+      background: white;
+      width: 100%;
+      padding: 1rem;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+      list-style: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 40;
+    }
+    .mobile-nav-menu.active {
+      display: block;
+    }
+    .mobile-nav-menu li {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #eaeaea;
+    }
+    .mobile-nav-menu li:last-child {
+      border-bottom: none;
+    }
+    .mobile-nav-menu a {
+      text-decoration: none;
+      color: #2d2d2d;
+      font-weight: 500;
+      display: block;
+    }
+    .mobile-nav-menu a:hover,
+    .mobile-nav-menu a.active {
+      color: #2F855A;
+    }
+
+    /* Image Gallery Hover Effects */
+    .project-image {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1.5rem;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      cursor: pointer;
+      height: 320px;
+      transition: all 0.3s ease;
+    }
+    .project-image:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 30px 35px -12px rgba(47, 133, 90, 0.3);
+    }
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      display: block;
+    }
+    .project-image:hover img {
+      transform: scale(1.1);
+    }
+    .image-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.3), transparent);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.5rem;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      color: white;
+    }
+    .project-image:hover .image-overlay {
+      opacity: 1;
+    }
+    .image-overlay h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+      transform: translateY(20px);
+      transition: transform 0.4s ease 0.1s;
+    }
+    .project-image:hover .image-overlay h3 {
+      transform: translateY(0);
+    }
+    .image-overlay p {
+      font-size: 0.875rem;
+      color: #d1d5db;
+      transform: translateY(20px);
+      transition: transform 0.4s ease 0.2s;
+    }
+    .project-image:hover .image-overlay p {
+      transform: translateY(0);
+    }
+
+    /* Stats Cards */
+    .stat-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+    .stat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(47,133,90,0.2);
+    }
+
+    /* Timeline */
+    .timeline-item {
+      position: relative;
+      padding-left: 2rem;
+      padding-bottom: 2rem;
+      border-left: 3px solid #2F855A;
+      margin-left: 1rem;
+    }
+    .timeline-item:last-child {
+      border-left-color: transparent;
+    }
+    .timeline-dot {
+      position: absolute;
+      left: -0.5rem;
+      top: 0;
+      width: 1rem;
+      height: 1rem;
+      background-color: #2F855A;
+      border-radius: 50%;
+      border: 2px solid white;
+    }
+    .timeline-date {
+      display: inline-block;
+      background-color: #e6f4ea;
+      color: #2F855A;
+      padding: 0.25rem 1rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: 0.875rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #2d2d2d;
+      color: white;
+      padding-top: 4rem;
+      padding-bottom: 2rem;
+    }
+    .footer-heading {
+      font-weight: 700;
+      font-size: 1.125rem;
+      margin-bottom: 1rem;
+    }
+    .footer-link {
+      color: #ccc;
+      transition: 0.2s;
+      text-decoration: none;
+    }
+    .footer-link:hover {
+      color: white;
+    }
+
+    /* Page Loader */
+    .page-loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.3s;
+    }
+    .loader-spinner {
+      width: 50px;
+      height: 50px;
+      border: 3px solid #f3f3f3;
+      border-top: 3px solid #2F855A;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Lead Popup */
+    #lead-popup {
+      transition: opacity 0.3s, transform 0.3s;
+      transform: translateY(0);
+    }
+    .popup-hidden {
+      opacity: 0 !important;
+      pointer-events: none;
+      transform: translateY(20px) !important;
+    }
+
+    /* Responsive */
+    @media(max-width:768px) {
+      .hamburger {
+        display: flex;
+      }
+      .nav-menu {
+        display: none;
+      }
+      .desktop-only {
+        display: none;
+      }
+      .project-image {
+        height: 250px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Page Loader -->
+  <div id="page-loader" class="page-loader">
+    <div class="loader-spinner"></div>
+  </div>
+
+  <!-- LEAD POPUP -->
+  <div id="lead-popup" class="fixed bottom-6 right-6 max-w-sm bg-white rounded-2xl shadow-2xl border border-green-200 p-6 z-50 popup-hidden">
+    <button id="close-popup" class="absolute top-3 right-3 text-gray-500 hover:text-black"><i class="fas fa-times"></i></button>
+    <h3 class="text-xl font-bold text-green-brand mb-2">🌱 Download free biogas guide</h3>
+    <p class="text-sm text-gray-600 mb-4">Learn how you save 60% on LPG. Get expert tips.</p>
+    <form class="flex flex-col gap-3">
+      <input type="email" placeholder="Your email" class="border border-gray-300 rounded-full px-4 py-2 text-sm" required>
+      <button type="submit" class="btn-primary text-sm py-2">Send me the guide</button>
+    </form>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="sticky-nav px-6 md:px-12 py-4 flex items-center justify-between">
+    <a href="../index.html" class="logo">
+      <img src="../logo1.png" alt="biogas" width="40" height="40" style="object-fit: contain;">
+      <span>Grener Bio</span>
+    </a>
+
+    <ul class="nav-menu">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="installation.html">Installation</a></li>
+      <li><a href="tutorials.html">Tutorials</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <div class="flex gap-3 items-center">
+      <a href="contact.html" class="btn-primary desktop-only text-sm">Get Quote</a>
+      <a href="contact.html#inspection" class="btn-outline desktop-only text-sm">Book Inspection</a>
+      <button class="hamburger" id="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <ul class="mobile-nav-menu" id="mobileMenu">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="projects.html" class="active">Projects</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="installation.html">Installation</a></li>
+    <li><a href="tutorials.html">Tutorials</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li class="flex gap-3 pt-4">
+      <a href="contact.html" class="btn-primary text-sm flex-1 text-center">Get Quote</a>
+      <a href="contact.html#inspection" class="btn-outline text-sm flex-1 text-center">Book Inspection</a>
+    </li>
+  </ul>
+
+  <!-- PAGE HEADER -->
+  <section class="bg-gradient-to-b from-green-50 to-white py-20 px-4">
+    <div class="max-w-7xl mx-auto text-center" data-aos="fade-up">
+      <h1 class="text-5xl md:text-6xl font-bold text-charcoal mb-6">Our Successful Projects</h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">500+ installations across India, saving 1000+ tonnes of CO2 annually.</p>
+    </div>
+  </section>
+
+  <!-- PROJECT STATS -->
+  <section class="py-12 px-4 bg-white">
+    <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div class="stat-card" data-aos="fade-up">
+        <div class="text-5xl font-bold text-green-brand mb-2">500+</div>
+        <p class="text-gray-600">Installations</p>
+      </div>
+      <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="text-5xl font-bold text-green-brand mb-2">30+</div>
+        <p class="text-gray-600">Cities</p>
+      </div>
+      <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="text-5xl font-bold text-green-brand mb-2">1000T</div>
+        <p class="text-gray-600">CO2 Saved</p>
+      </div>
+      <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="text-5xl font-bold text-green-brand mb-2">₹2Cr+</div>
+        <p class="text-gray-600">Customer Savings</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PROJECTS -->
+  <section class="py-20 px-4 bg-gray-50">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-charcoal mb-16" data-aos="fade-up">Featured Installations</h2>
+
+      <div class="space-y-16">
+        <!-- Project 1 -->
+        <div class="grid md:grid-cols-2 gap-8 items-center" data-aos="fade-up">
+          <div class="project-image">
+            <img src="../bio72.jpeg" alt="Greenwoods Apartment Project">
+            <div class="image-overlay">
+              <h3>Domestic Biogas Plant</h3>
+              <p>Community biogas plant serving 25 families</p>
+            </div>
+          </div>
+          <div>
+            <span class="text-green-brand font-semibold">Completed 2024</span>
+            <h3 class="text-3xl font-bold mt-2 mb-4">Domestic Biogas Plant</h3>
+            <p class="text-gray-600 mb-4"><i class="fas fa-map-pin text-green-brand mr-2"></i>Pune, Maharashtra</p>
+            <p class="text-gray-700 mb-6">Installed a 10m³ community biogas plant serving 25 families. Processes 50kg of kitchen waste daily, saving ₹8,000/month on LPG. The slurry is used in the apartment's organic garden.</p>
+            <div class="grid grid-cols-3 gap-4 text-center">
+              <div class="bg-white p-4 rounded-xl">
+                <div class="text-2xl font-bold text-green-brand">50kg</div>
+                <div class="text-sm">Daily Waste</div>
+              </div>
+              <div class="bg-white p-4 rounded-xl">
+                <div class="text-2xl font-bold text-green-brand">₹8k</div>
+                <div class="text-sm">Monthly Savings</div>
+              </div>
+              <div class="bg-white p-4 rounded-xl">
+                <div class="text-2xl font-bold text-green-brand">25</div>
+                <div class="text-sm">Families</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="grid md:grid-cols-2 gap-8 items-center" data-aos="fade-up">
+          <div class="order-2 md:order-1">
+            <span class="text-green-brand font-semibold">Completed 2023</span>
+            <h3 class="text-3xl font-bold mt-2 mb-4">Floating Biogas Plant</h3>
+            <p class="text-gray-600 mb-4"><i class="fas fa-map-pin text-green-brand mr-2"></i>Chennai, Tamil Nadu</p>
+            <p class="text-gray-700 mb-6">A 5m³ restaurant-special biogas system handling 30kg of food waste daily. Powers the kitchen for 4-5 hours, completely eliminating LPG costs for cooking. Includes custom grease trap system.</p>
+            <div class="grid grid-cols-3 gap-4 text-center">
+              <div class="bg-white p-4 rounded-xl">
+                <div class="text-2xl font-bold text-green-brand">30kg</div>
+                <div class="text-sm">Daily Waste</div>
+              </div>
+              <div class="bg-white p-4 rounded-xl">
+                <div class="text-2xl font-bold text-green-brand">100%</div>
+                <div class="text-sm">LPG Savings</div>
+              </div>
+              <div class="bg-white p-4 rounded-xl">
+                <div class="text-2xl font-bold text-green-brand">4-5hrs</div>
+                <div class="text-sm">Cooking Gas</div>
+              </div>
+            </div>
+          </div>
+          <div class="order-1 md:order-2 project-image">
+            <img src="../bio1.jpeg" alt="Anand Bhavan Restaurant">
+            <div class="image-overlay">
+              <h3>Floating Biogas Plant</h3>
+              <p>Restaurant-special biogas system</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="grid md:grid-cols-2 gap-8 items-center" data-aos="fade-up">
+          <div class="project-image">
+            <img src="../project3.jpeg" alt="Ranganathan Dairy Farm">
+            <div class="image-overlay">
+              <h3>Fixed Dome Biogas Plant</h3>
+              <p>Large-scale farm biogas plant</p>
+            </div>
+          </div>
+          <div>
+            <span class="text-green-brand font-semibold">Completed 2024</span>
+            <h3 class="text-3xl font-bold mt-2 mb-4">Fixed Dome Biogas Plant</h3>
+            <p class="text-gray-600 mb-4"><i class="fas fa-map-pin text-green-brand mr-2"></i>Mysore, Karnataka</p>
+            <p class="text-gray-700 mb-6">Large-scale 50m³ farm biogas plant processing 200kg of cattle dung daily. Produces enough gas for the farmhouse and 10 workers' quarters. The nutrient-rich slurry has increased crop yield by 40%.</p>
+            <div class="grid grid-cols-3 gap-4 text-center">
+              <div class="bg-white p-4 rounded-xl">
+                <div class="text-2xl font-bold text-green-brand">200kg</div>
+                <div class="text-sm">Daily Dung</div>
+              </div>
+              <div class="bg-white p-4 rounded-xl">
+                <div class="text-2xl font-bold text-green-brand">50m³</div>
+                <div class="text-sm">Plant Size</div>
+              </div>
+              <div class="bg-white p-4 rounded-xl">
+                <div class="text-2xl font-bold text-green-brand">40%</div>
+                <div class="text-sm">Crop Increase</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT TIMELINE -->
+  <section class="py-20 px-4 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-charcoal mb-16" data-aos="fade-up">Our Journey</h2>
+      <div class="relative" data-aos="fade-up">
+        <!-- Timeline Item 1 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2015</div>
+          <h3 class="text-xl font-bold">Company Founded</h3>
+          <p class="text-gray-600">Started with a mission to make biogas accessible to urban homes.</p>
+        </div>
+        <!-- Timeline Item 2 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2017</div>
+          <h3 class="text-xl font-bold">First 100 Installations</h3>
+          <p class="text-gray-600">Reached milestone of 100 home biogas systems across Bengaluru.</p>
+        </div>
+        <!-- Timeline Item 3 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2019</div>
+          <h3 class="text-xl font-bold">Expanded to Commercial</h3>
+          <p class="text-gray-600">Launched community and restaurant-scale biogas systems.</p>
+        </div>
+        <!-- Timeline Item 4 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2022</div>
+          <h3 class="text-xl font-bold">Pan-India Presence</h3>
+          <p class="text-gray-600">Operations expanded to 15+ cities across India.</p>
+        </div>
+        <!-- Timeline Item 5 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2025</div>
+          <h3 class="text-xl font-bold">500+ Installations</h3>
+          <p class="text-gray-600">Proud to serve 500+ happy customers nationwide.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADDITIONAL PROJECT GALLERY -->
+  <section class="py-20 px-4 bg-gray-50">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-charcoal mb-12" data-aos="fade-up">More Project Highlights</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="project-image" data-aos="fade-up" data-aos-delay="100">
+          <img src="../bio2.jpeg" alt="Biogas Installation">
+          <div class="image-overlay">
+            <h3>Residential Biogas</h3>
+            <p>Individual home installation, Bengaluru</p>
+          </div>
+        </div>
+        <div class="project-image" data-aos="fade-up" data-aos-delay="200">
+          <img src="../bio3.jpeg" alt="Community Biogas">
+          <div class="image-overlay">
+            <h3>Community Unit</h3>
+            <p>Hostel kitchen waste management</p>
+          </div>
+        </div>
+        <div class="project-image" data-aos="fade-up" data-aos-delay="300">
+          <img src="../bio4.jpeg" alt="Training Session">
+          <div class="image-overlay">
+            <h3>Customer Training</h3>
+            <p>Operation & maintenance workshop</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <!-- CTA SECTION -->
+<section class="bg-charcoal text-white py-20 px-4 text-center">
+  <div class="max-w-3xl mx-auto" data-aos="fade-up">
+    <h2 class="text-4xl font-bold mb-6">Start Your Green Journey Today</h2>
+    <p class="text-gray-300 text-lg mb-8">Join 500+ happy customers who've switched to clean, renewable energy.</p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a href="contact.html" class="btn-outline border-2 border-white text-white hover:border-white hover:shadow-[0_0_15px_rgba(255,255,255,0.7)] hover:bg-transparent hover:text-white font-semibold px-8 py-3 rounded-full transition-all duration-300">Get Free Consultation</a>
+      <a href="gallery.html" class="btn-outline border-2 border-white text-white hover:border-white hover:shadow-[0_0_15px_rgba(255,255,255,0.7)] hover:bg-transparent hover:text-white font-semibold px-8 py-3 rounded-full transition-all duration-300">View Gallery</a>
+    </div>
+  </div>
+</section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 px-6">
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <i class="fas fa-leaf text-3xl text-green-brand"></i>
+          <span class="font-bold text-2xl">Grener Bio</span>
+        </div>
+        <p class="text-sm text-gray-400"><i class="fas fa-map-pin mr-2"></i>31/16, Thiruvalluvar Street,<br>Nehru Nagar, Velachery,<br>Chennai - 600042</p>
+        <p class="text-sm text-gray-400 mt-2"><i class="fas fa-phone mr-2"></i>+91 8124820036</p>
+        <p class="text-sm text-gray-400 mt-2"><i class="fab fa-whatsapp mr-2 text-green-400"></i>+91 8124820036</p>
+      </div>
+      <div>
+        <h4 class="footer-heading">Quick links</h4>
+        <ul class="space-y-2 text-gray-400">
+          <li><a href="about.html" class="footer-link">About us</a></li>
+          <li><a href="products.html" class="footer-link">Products</a></li>
+          <li><a href="services.html" class="footer-link">Services</a></li>
+          <li><a href="projects.html" class="footer-link">Projects</a></li>
+          <li><a href="gallery.html" class="footer-link">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Support</h4>
+        <ul class="space-y-2 text-gray-400">
+          <li><a href="contact.html" class="footer-link">Contact</a></li>
+          <li><a href="installation.html" class="footer-link">Installation</a></li>
+          <li><a href="tutorials.html" class="footer-link">Tutorials</a></li>
+          <li><a href="#" class="footer-link">Privacy policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Follow us</h4>
+        <div class="flex gap-4 text-2xl mb-4">
+          <a href="#" class="footer-link"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="footer-link"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="footer-link"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="footer-link"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p class="text-xs text-gray-500">© 2025 Grener Bio. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Initialize AOS
+    AOS.init({ duration: 1000, once: true });
+
+    // Page loader
+    window.addEventListener('load', function() {
+      const loader = document.getElementById('page-loader');
+      if (loader) {
+        loader.style.opacity = '0';
+        setTimeout(() => {
+          loader.style.display = 'none';
+        }, 300);
+      }
+    });
+
+    // Mobile menu functionality
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    if (hamburger && mobileMenu) {
+      hamburger.addEventListener('click', function() {
+        this.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+        document.body.classList.toggle('menu-open');
+      });
+    }
+
+    // Lead popup
+    setTimeout(() => {
+      const popup = document.getElementById('lead-popup');
+      if (popup) {
+        popup.classList.remove('popup-hidden');
+      }
+    }, 5000);
+
+    // Close popup
+    const closePopup = document.getElementById('close-popup');
+    if (closePopup) {
+      closePopup.addEventListener('click', function() {
+        document.getElementById('lead-popup').classList.add('popup-hidden');
+      });
+    }
+
+    // Close mobile menu when clicking on a link
+    const mobileLinks = document.querySelectorAll('.mobile-nav-menu a');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        document.body.classList.remove('menu-open');
+      });
+    });
+  </script>
+</body>
+</html>

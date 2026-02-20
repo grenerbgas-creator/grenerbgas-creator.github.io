@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products - Grener Bio | Biogas Systems</title>
+  <meta name="description" content="Explore Grener Bio's range of biogas plants: Home, Community, Industrial, and Compact systems.">
+  <meta name="keywords" content="biogas products, home biogas plant, commercial biogas, industrial biogas system">
+  <meta property="og:title" content="Grener Bio Products – Biogas Solutions">
+  <meta property="og:description" content="Choose from our range of micro-feed to industrial biogas systems.">
+  <link rel="icon" type="image/png" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%232F855A'/%3E%3Cpath d='M30 60 L45 25 L60 60 L52 60 L45 40 L38 60Z' fill='white'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <!-- Page Loader -->
+  <div id="page-loader" class="page-loader">
+    <div class="loader-spinner"></div>
+  </div>
+
+  <!-- LEAD POPUP -->
+  <div id="lead-popup" class="fixed bottom-6 right-6 max-w-sm bg-white rounded-2xl shadow-2xl border border-green-200 p-6 z-50 popup-hidden">
+    <button id="close-popup" class="absolute top-3 right-3 text-gray-500 hover:text-black"><i class="fas fa-times"></i></button>
+    <h3 class="text-xl font-bold text-green-brand mb-2">🌱 Download free biogas guide</h3>
+    <p class="text-sm text-gray-600 mb-4">Learn how you save 60% on LPG. Get expert tips.</p>
+    <form class="flex flex-col gap-3">
+      <input type="email" placeholder="Your email" class="border border-gray-300 rounded-full px-4 py-2 text-sm" required>
+      <button type="submit" class="btn-primary text-sm py-2">Send me the guide</button>
+    </form>
+  </div>
+
+  <!-- STICKY NAVIGATION -->
+  <nav class="sticky-nav px-6 md:px-12 py-4 flex items-center justify-between">
+    <a href="index.html" class="logo">
+      <img src="../logo1.png" alt="biogas" width="40" height="40" style="object-fit: contain;">
+      <span>Grener Bio</span>
+    </a>
+
+    <!-- Desktop Menu -->
+    <ul class="nav-menu">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="products.html" class="active">Products</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="installation.html">Installation</a></li>
+      <li><a href="tutorials.html">Tutorials</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <div class="flex gap-3 items-center">
+      <a href="contact.html" class="btn-primary desktop-only text-sm">Get Quote</a>
+      <a href="contact.html#inspection" class="btn-outline desktop-only text-sm">Book Inspection</a>
+
+      <!-- Mobile Hamburger -->
+      <button class="hamburger" id="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <ul class="mobile-nav-menu" id="mobileMenu">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="products.html" class="active">Products</a></li>
+    <li><a href="services.html" class="active">Services</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="installation.html">Installation</a></li>
+    <li><a href="tutorials.html">Tutorials</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li class="flex gap-3 pt-4">
+      <a href="contact.html" class="btn-primary text-sm flex-1 text-center">Get Quote</a>
+      <a href="contact.html#inspection" class="btn-outline text-sm flex-1 text-center">Book Inspection</a>
+    </li>
+  </ul>
+
+  <!-- PAGE HEADER -->
+  <section class="bg-gradient-to-b from-green-50 to-white py-20 px-4">
+    <div class="max-w-7xl mx-auto text-center" data-aos="fade-up">
+      <h1 class="text-5xl md:text-6xl font-bold text-charcoal mb-6">Our Biogas Products</h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">From compact home systems to large-scale industrial solutions, we have the perfect biogas plant for your needs.</p>
+    </div>
+  </section>
+
+  <!-- PRODUCTS GRID -->
+  <section class="py-20 px-4 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Product 1: Home Biogas -->
+        <div class="product-card relative" data-aos="fade-up">
+          <span class="product-badge">Best Seller</span>
+          <div class="feature-icon">
+            <i class="fas fa-home"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-2">Home Biogas System</h3>
+          <p class="text-sm text-green-brand font-semibold mb-3">For 2-5 family members</p>
+          <p class="text-gray-600 mb-4">Perfect for individual homes. Converts 2-5kg of kitchen waste daily into 2-3 hours of cooking gas.</p>
+          <ul class="space-y-2 mb-6 text-sm">
+            <li><i class="fas fa-check text-green-brand mr-2"></i>Compact size: 1.5m x 1.5m</li>
+            <li><i class="fas fa-check text-green-brand mr-2"></i>Produces 10-15L slurry/day</li>
+            <li><i class="fas fa-check text-green-brand mr-2"></i>Zero maintenance for 6 months</li>
+          </ul>
+          <div class="flex justify-between items-center">
+            <span class="text-2xl font-bold text-green-brand">₹45,000</span>
+            <a href="contact.html" class="btn-primary text-sm">Inquire Now</a>
+          </div>
+        </div>
+
+        <!-- Product 2: Community Biogas -->
+        <div class="product-card relative" data-aos="fade-up" data-aos-delay="100">
+          <div class="feature-icon">
+            <i class="fas fa-building"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-2">Community Biogas</h3>
+          <p class="text-sm text-green-brand font-semibold mb-3">For apartments & hostels</p>
+          <p class="text-gray-600 mb-4">Ideal for 10-20 families. Processes 20-50kg waste daily, reduces common area LPG expenses.</p>
+          <ul class="space-y-2 mb-6 text-sm">
+            <li><i class="fas fa-check text-green-brand mr-2"></i>Modular design: 3m x 4m</li>
+            <li><i class="fas fa-check text-green-brand mr-2"></i>Smart monitoring included</li>
+            <li><i class="fas fa-check text-green-brand mr-2"></i>ROI in 18-24 months</li>
+          </ul>
+          <div class="flex justify-between items-center">
+            <span class="text-2xl font-bold text-green-brand">₹2,85,000</span>
+            <a href="contact.html" class="btn-primary text-sm">Inquire Now</a>
+          </div>
+        </div>
+
+        <!-- Product 3: Industrial Biogas -->
+        <div class="product-card relative" data-aos="fade-up" data-aos-delay="200">
+          <span class="product-badge">Commercial</span>
+          <div class="feature-icon">
+            <i class="fas fa-industry"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-2">Industrial Biogas</h3>
+          <p class="text-sm text-green-brand font-semibold mb-3">For factories & farms</p>
+          <p class="text-gray-600 mb-4">Large-scale solution for 100kg+ organic waste. Can power industrial kitchens or generate electricity.</p>
+          <ul class="space-y-2 mb-6 text-sm">
+            <li><i class="fas fa-check text-green-brand mr-2"></i>Customizable capacity</li>
+            <li><i class="fas fa-check text-green-brand mr-2"></i>Automated feeding system</li>
+            <li><i class="fas fa-check text-green-brand mr-2"></i>CHP generator ready</li>
+          </ul>
+          <div class="flex justify-between items-center">
+            <span class="text-2xl font-bold text-green-brand">Custom Quote</span>
+            <a href="contact.html" class="btn-primary text-sm">Contact Sales</a>
+          </div>
+        </div>
+
+        <!-- Product 4: Portable Biogas -->
+        <div class="product-card relative" data-aos="fade-up">
+          <div class="feature-icon">
+            <i class="fas fa-suitcase"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-2">Portable Biogas</h3>
+          <p class="text-sm text-green-brand font-semibold mb-3">For camping & events</p>
+          <p class="text-gray-600 mb-4">Lightweight, movable unit for temporary setups. Great for events, remote locations, and workshops.</p>
+          <ul class="space-y-2 mb-6 text-sm">
+            <li><i class="fas fa-check text-green-brand mr-2"></i>Weight: 45kg only</li>
+            <li><i class="fas fa-check text-green-brand mr-2"></i>Sets up in 30 minutes</li>
+            <li><i class="fas fa-check text-green-brand mr-2"></i>Rental option available</li>
+          </ul>
+          <div class="flex justify-between items-center">
+            <span class="text-2xl font-bold text-green-brand">₹65,000</span>
+            <a href="contact.html" class="btn-primary text-sm">Inquire Now</a>
+          </div>
+        </div>
+
+        <!-- Product 5: Restaurant Special -->
+        <div class="product-card relative" data-aos="fade-up" data-aos-delay="100">
+          <span class="product-badge">Popular</span>
+          <div class="feature-icon">
+            <i class="fas fa-utensils"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-2">Restaurant Special</h3>
+          <p class="text-sm text-green-brand font-semibold mb-3">For commercial kitchens</p>
+          <p class="text-gray-600 mb-4">Designed for high-volume food waste. Includes grease trap and odor control system.</p>
+          <ul class="space-y-2 mb-6 text-sm">
+            <li><i class="fas fa-check text-green-brand mr-2"></i>Handles oily waste</li>
+            <li><i class="fas fa-check text-green-brand mr-2"></i>In-built grinder</li>
+            <li><i class="fas fa-check text-green-brand mr-2"></i>Pays for itself in 1 year</li>
+          </ul>
+          <div class="flex justify-between items-center">
+            <span class="text-2xl font-bold text-green-brand">₹1,95,000</span>
+            <a href="contact.html" class="btn-primary text-sm">Inquire Now</a>
+          </div>
+        </div>
+
+        <!-- Product 6: Farm Biogas -->
+        <div class="product-card relative" data-aos="fade-up" data-aos-delay="200">
+          <div class="feature-icon">
+            <i class="fas fa-tractor"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-2">Farm Biogas</h3>
+          <p class="text-sm text-green-brand font-semibold mb-3">For agricultural use</p>
+          <p class="text-gray-600 mb-4">Optimized for cattle dung and crop residue. Produces both cooking gas and high-quality organic fertilizer.</p>
+          <ul class="space-y-2 mb-6 text-sm">
+            <li><i class="fas fa-check text-green-brand mr-2"></i>Handles 50-200kg dung/day</li>
+            <li><i class="fas fa-check text-green-brand mr-2"></i>Liquid fertilizer outlet</li>
+            <li><i class="fas fa-check text-green-brand mr-2"></i>Solar pump compatible</li>
+          </ul>
+          <div class="flex justify-between items-center">
+            <span class="text-2xl font-bold text-green-brand">₹3,50,000</span>
+            <a href="contact.html" class="btn-primary text-sm">Inquire Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON TABLE -->
+  <section class="py-20 px-4 bg-gray-50">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-charcoal mb-12" data-aos="fade-up">Compare Models</h2>
+      <div class="overflow-x-auto" data-aos="fade-up">
+        <table class="w-full bg-white rounded-2xl shadow-lg">
+          <thead class="bg-green-brand text-white">
+            <tr>
+              <th class="p-4 text-left">Model</th>
+              <th class="p-4 text-left">Capacity</th>
+              <th class="p-4 text-left">Gas Output</th>
+              <th class="p-4 text-left">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y">
+            <tr class="hover:bg-green-50">
+              <td class="p-4 font-semibold">GB 300</td>
+              <td class="p-4">2 kg/day</td>
+              <td class="p-4">20 mins cooking</td>
+              <td class="p-4">16,500</td>
+            </tr>
+            <tr class="hover:bg-green-50">
+              <td class="p-4 font-semibold">GB 500</td>
+              <td class="p-4">4 kg/day</td>
+              <td class="p-4">30 mins cooking</td>
+              <td class="p-4">20,000</td>
+            </tr>
+            <tr class="hover:bg-green-50">
+              <td class="p-4 font-semibold">GB 750</td>
+              <td class="p-4">6 kg/day</td>
+              <td class="p-4">50 mins cooking</td>
+              <td class="p-4">23,000</td>
+            </tr>
+            <tr class="hover:bg-green-50">
+              <td class="p-4 font-semibold">GB 1000</td>
+              <td class="p-4">8 kg/day</td>
+              <td class="p-4">60 mins cooking</td>
+              <td class="p-4">27,000</td>
+            </tr>
+            <tr class="hover:bg-green-50">
+              <td class="p-4 font-semibold">GB 1500</td>
+              <td class="p-4">15 kg/day</td>
+              <td class="p-4">90 mins cooking</td>
+              <td class="p-4">31,500</td>
+            </tr>
+            <tr class="hover:bg-green-50">
+              <td class="p-4 font-semibold">GB 2000</td>
+              <td class="p-4">20 kg/day</td>
+              <td class="p-4">2 hrs cooking</td>
+              <td class="p-4">45,500</td>
+            </tr>
+            <tr class="hover:bg-green-50">
+              <td class="p-4 font-semibold">GB 3000</td>
+              <td class="p-4">30 kg/day</td>
+              <td class="p-4">3.5 hrs cooking</td>
+              <td class="p-4">61,500</td>
+            </tr>
+            <tr class="hover:bg-green-50">
+              <td class="p-4 font-semibold">GB 5000</td>
+              <td class="p-4">50 kg/day</td>
+              <td class="p-4">5 hrs cooking</td>
+              <td class="p-4">85,500</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+ <!-- CTA SECTION -->
+<section class="bg-charcoal text-white py-20 px-4 text-center">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-4xl font-bold mb-6">Not sure which model fits your needs?</h2>
+    <p class="text-gray-300 text-lg mb-8">Our experts will help you choose the perfect biogas system for your specific requirements.</p>
+    <a href="contact.html" class="btn-outline border-2 border-white text-white hover:border-white hover:shadow-[0_0_15px_rgba(255,255,255,0.7)] hover:bg-transparent hover:text-white font-semibold px-8 py-3 rounded-full transition-all duration-300">Get Free Consultation</a>
+  </div>
+</section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 px-6">
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <i class="fas fa-leaf text-3xl text-green-brand"></i>
+          <span class="font-bold text-2xl">Grener Bio</span>
+        </div>
+        <p class="text-sm text-gray-400"><i class="fas fa-map-pin mr-2"></i>31/16, Thiruvalluvar Street,<br>Nehru Nagar, Velachery,<br>Chennai - 600042</p>
+        <p class="text-sm text-gray-400 mt-2"><i class="fas fa-phone mr-2"></i>+91 8124820036</p>
+      </div>
+      <div>
+        <h4 class="footer-heading">Quick links</h4>
+        <ul class="space-y-2 text-gray-400">
+          <li><a href="about.html" class="footer-link">About us</a></li>
+          <li><a href="products.html" class="footer-link">Products</a></li>
+          <li><a href="projects.html" class="footer-link">Projects</a></li>
+          <li><a href="gallery.html" class="footer-link">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Support</h4>
+        <ul class="space-y-2 text-gray-400">
+          <li><a href="contact.html" class="footer-link">Contact</a></li>
+          <li><a href="installation.html" class="footer-link">Installation</a></li>
+          <li><a href="tutorials.html" class="footer-link">Tutorials</a></li>
+          <li><a href="#" class="footer-link">Privacy policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Follow us</h4>
+        <div class="flex gap-4 text-2xl">
+          <a href="#" class="footer-link"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="footer-link"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="footer-link"><i class="fab fa-facebook"></i></a>
+        </div>
+        <p class="text-xs text-gray-500 mt-8">© 2025 Grener Bio. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
+</body>
+</html>

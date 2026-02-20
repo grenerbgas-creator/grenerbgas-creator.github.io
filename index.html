@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- SEO meta tags -->
+  <title>Grener Bio | Affordable biogas systems for sustainable living</title>
+  <meta name="description" content="Grener Bio: Turn waste into clean energy with micro‑feed biogas plants for homes, restaurants, farms & institutions. Get free consultation.">
+  <meta name="keywords" content="biogas, renewable energy, waste to energy, biogas plant, organic fertilizer, LPG savings">
+  <!-- Open Graph / social -->
+  <meta property="og:title" content="Grener Bio – Convert Waste into Clean Energy">
+  <meta property="og:description" content="Affordable biogas solutions for homes, hostels, restaurants & more. Book an inspection today!">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.grenerbio.com">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2013&auto=format&fit=crop">
+  <!-- favicon (placeholder) -->
+  <link rel="icon" type="image/png" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%232F855A'/%3E%3Cpath d='M30 60 L45 25 L60 60 L52 60 L45 40 L38 60Z' fill='white'/%3E%3C/svg%3E">
+  <!-- Font & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Tailwind (via CDN) + custom layer -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- AOS (animate on scroll) smooth library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    /* custom corporate touches: green/dark charcoal, smoothness */
+    body {
+      font-family: 'Inter', 'Poppins', sans-serif;
+      color: #1e1e1e; /* dark charcoal */
+      background-color: #ffffff;
+      scroll-behavior: smooth;
+    }
+    h1, h2, h3, .heading-font {
+      font-family: 'Poppins', 'Inter', sans-serif;
+      font-weight: 600;
+    }
+    .text-green-brand {
+      color: #2F855A; /* deep corporate green */
+    }
+    .bg-green-brand {
+      background-color: #2F855A;
+    }
+    .border-green-brand {
+      border-color: #2F855A;
+    }
+    .bg-charcoal {
+      background-color: #2d2d2d; /* dark charcoal */
+    }
+    .text-charcoal {
+      color: #2d2d2d;
+    }
+    .btn-primary {
+      background-color: #2F855A;
+      color: white;
+      padding: 0.75rem 2rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      transition: all 0.2s;
+      box-shadow: 0 4px 6px -1px rgba(47,133,90,0.2);
+    }
+    .btn-primary:hover {
+      background-color: #1f5f3f;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3px rgba(47,133,90,0.3);
+    }
+    .btn-outline {
+      background-color: transparent;
+      border: 2px solid #2F855A;
+      color: #2F855A;
+      padding: 0.75rem 2rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+    .btn-outline:hover {
+      background-color: #2F855A;
+      color: white;
+    }
+    /* sticky nav */
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background-color: rgba(255,255,255,0.9);
+      border-bottom: 1px solid #eaeaea;
+    }
+    /* nav menu styles */
+    .nav-menu {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-menu a {
+      font-weight: 500;
+      transition: color 0.2s;
+      position: relative;
+      padding: 0.5rem 0;
+      text-decoration: none;
+      color: #2d2d2d;
+    }
+    .nav-menu a:hover {
+      color: #2F855A;
+    }
+    .nav-menu a.active {
+      color: #2F855A;
+      font-weight: 600;
+    }
+    .nav-menu a.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #2F855A;
+      border-radius: 2px;
+    }
+    /* mobile menu */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+    .bar {
+      width: 25px;
+      height: 3px;
+      background-color: #2d2d2d;
+      transition: all 0.3s ease-in-out;
+    }
+    .hamburger.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+    .mobile-nav-menu {
+      display: none;
+      background: white;
+      width: 100%;
+      padding: 1rem;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+      list-style: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 40;
+    }
+    .mobile-nav-menu.active {
+      display: block;
+    }
+    .mobile-nav-menu li {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #eaeaea;
+    }
+    .mobile-nav-menu li:last-child {
+      border-bottom: none;
+    }
+    .mobile-nav-menu a {
+      text-decoration: none;
+      color: #2d2d2d;
+      font-weight: 500;
+      display: block;
+    }
+    .mobile-nav-menu a:hover,
+    .mobile-nav-menu a.active {
+      color: #2F855A;
+    }
+    @media(max-width:768px) {
+      .hamburger {
+        display: flex;
+      }
+      .nav-menu {
+        display: none;
+      }
+      .desktop-only {
+        display: none;
+      }
+    }
+    /* icon boxes */
+    .feature-icon {
+      background-color: #e6f4ea;
+      color: #2F855A;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin-bottom: 1.5rem;
+    }
+    .step-card {
+      background: #f9f9f9;
+      border-radius: 2rem;
+      padding: 2rem 1.5rem;
+      transition: 0.2s;
+    }
+    .step-card:hover {
+      background: white;
+      box-shadow: 0 20px 25px -5px rgba(0,0,0,0.05), 0 10px 10px -5px rgba(0,0,0,0.02);
+    }
+    /* testimonial */
+    .testimonial-card {
+      background: #f5f7f5;
+      border-radius: 2rem;
+      padding: 2rem;
+    }
+    /* grid industry */
+    .industry-tile {
+      background: #f0f4f0;
+      padding: 1.75rem 1rem;
+      border-radius: 1.5rem;
+      text-align: center;
+      font-weight: 600;
+      color: #2d2d2d;
+      transition: all 0.2s;
+      border: 1px solid transparent;
+    }
+    .industry-tile i {
+      color: #2F855A;
+      font-size: 2.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .industry-tile:hover {
+      border-color: #2F855A;
+      background: white;
+    }
+    /* footer */
+    .footer-link {
+      color: #ccc;
+      transition: 0.2s;
+      text-decoration: none;
+    }
+    .footer-link:hover {
+      color: white;
+    }
+    /* lead popup (hidden by default, shown after some seconds via JS) */
+    #lead-popup {
+      transition: opacity 0.3s, transform 0.3s;
+      transform: translateY(0);
+    }
+    .popup-hidden {
+      opacity: 0 !important;
+      pointer-events: none;
+      transform: translateY(20px) !important;
+    }
+    /* simple cost calculator */
+    #calc-card {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+    }
+    /* utility */
+    .section-padding {
+      padding: 5rem 1rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- LEAD CAPTURE POPUP (hidden) -->
+  <div id="lead-popup" class="fixed bottom-6 right-6 max-w-sm bg-white rounded-2xl shadow-2xl border border-green-200 p-6 z-50 popup-hidden">
+    <button id="close-popup" class="fabsolute top-3 right-3 text-gray-500 hover:text-black"><i class="fas fa-times"></i></button>
+    <h3 class="text-xl font-bold text-green-brand mb-2">🌱 Download free biogas guide</h3>
+    <p class="text-sm text-gray-600 mb-4">Learn how you save 60% on LPG. Get expert tips.</p>
+    <form class="flex flex-col gap-3">
+      <input type="email" placeholder="Your email" class="border border-gray-300 rounded-full px-4 py-2 text-sm">
+      <button type="submit" class="btn-primary text-sm py-2">Send me the guide</button>
+    </form>
+  </div>
+
+  <!-- STICKY NAVIGATION - UPDATED WITH NEW MENU ITEMS -->
+  <nav class="sticky-nav px-6 md:px-12 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-2">
+      <img src="logo1.png" alt="biogas" width="40" height="40" style="object-fit: contain;">
+      <span class="font-bold text-2xl tracking-tight text-charcoal">Grener Bio</span>
+    </div>
+
+    <!-- Desktop Menu -->
+    <ul class="nav-menu">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="pages/products.html">Products</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="pages/projects.html">Projects</a></li>
+      <li><a href="pages/gallery.html">Gallery</a></li>
+      <li><a href="pages/installation.html">Installation</a></li>
+      <li><a href="pages/tutorials.html">Tutorials</a></li>
+      <li><a href="pages/about.html">About Us</a></li>
+      <li><a href="pages/contact.html">Contact</a></li>
+    </ul>
+
+    <div class="flex gap-3 items-center">
+      <a href="pages/contact.html" class="btn-primary hidden lg:inline-block text-sm">Get Quote</a>
+      <a href="pages/contact.html#inspection" class="btn-outline hidden lg:inline-block text-sm">Book Inspection</a>
+
+      <!-- Mobile Hamburger -->
+      <button class="hamburger" id="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu (hidden by default) -->
+  <ul class="mobile-nav-menu" id="mobileMenu">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="pages/products.html">Products</a></li>
+    <li><a href="services.html" class="active">Services</a></li>
+    <li><a href="pages/projects.html">Projects</a></li>
+    <li><a href="pages/gallery.html">Gallery</a></li>
+    <li><a href="pages/installation.html">Installation</a></li>
+    <li><a href="pages/tutorials.html">Tutorials</a></li>
+    <li><a href="pages/about.html">About Us</a></li>
+    <li><a href="pages/contact.html">Contact</a></li>
+    <li class="flex gap-3 pt-4">
+      <a href="pages/contact.html" class="btn-primary text-sm flex-1 text-center">Get Quote</a>
+      <a href="pages/contact.html#inspection" class="btn-outline text-sm flex-1 text-center">Book Inspection</a>
+    </li>
+  </ul>
+
+  <!-- HOME PAGE HERO -->
+  <section id="home" class="section-padding pt-10 md:pt-16 bg-white" data-aos="fade-up">
+    <div class="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12 px-4">
+      <div class="flex-1 text-center md:text-left">
+        <h1 class="text-4xl md:text-5xl font-bold leading-tight text-charcoal">Affordable Biogas Systems for Sustainable Living</h1>
+        <p class="text-lg text-gray-600 mt-6 max-w-lg mx-auto md:mx-0">Turn kitchen and organic waste into clean cooking gas and organic fertilizer. Zero smoke, zero smell.</p>
+        <div class="flex flex-wrap gap-4 justify-center md:justify-start mt-8">
+          <a href="pages/contact.html" class="btn-primary">Get Free Consultation →</a>
+          <a href="#how-it-works" class="btn-outline">Learn How It Works</a>
+        </div>
+        <div class="flex items-center justify-center md:justify-start gap-6 mt-8 text-green-brand font-medium">
+          <span><i class="fas fa-check-circle mr-1"></i> 500+ units</span>
+          <span><i class="fas fa-check-circle mr-1"></i> 30+ cities</span>
+        </div>
+      </div>
+      <div class="flex-1">
+        <img src="bio_frontpage.png" alt="Biogas plant" class="rounded-3xl shadow-2xl object-cover w-full h-auto" style="max-height:420px;">
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT GRENER BIO (short) -->
+  <section class="bg-white py-16 px-4" data-aos="fade-up">
+    <div class="max-w-5xl mx-auto text-center">
+      <span class="text-green-brand font-semibold tracking-wider">OUR MISSION</span>
+      <h2 class="text-4xl font-bold mt-2 mb-6 text-charcoal">Making clean energy a <span class="text-green-brand">neighbourhood norm</span></h2>
+      <p class="text-gray-600 text-lg max-w-3xl mx-auto">Grener Bio designs micro‑feed biogas plants that fit urban homes, apartments, and large farms. With 10+ years of expertise, we convert organic waste into renewable gas and organic manure – affordable, safe, and simple.</p>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US (icons) -->
+  <section class="bg-gray-50 py-20 px-4" data-aos="fade-up">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-charcoal">Why choose Grener Bio</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+        <div class="text-center"><div class="feature-icon mx-auto"><i class="fas fa-users"></i></div><h3 class="font-bold text-xl">Expert team</h3><p class="text-gray-500">IIT/IIM alumni & renewable energy engineers</p></div>
+        <div class="text-center"><div class="feature-icon mx-auto"><i class="fas fa-rupee-sign"></i></div><h3 class="font-bold text-xl">Affordable pricing</h3><p class="text-gray-500">30% less than market, ROI in 18 months</p></div>
+        <div class="text-center"><div class="feature-icon mx-auto"><i class="fas fa-tools"></i></div><h3 class="font-bold text-xl">Easy maintenance</h3><p class="text-gray-500">Annual service & remote monitoring</p></div>
+        <div class="text-center"><div class="feature-icon mx-auto"><i class="fas fa-globe-asia"></i></div><h3 class="font-bold text-xl">Eco impact</h3><p class="text-gray-500">2 tonnes CO₂ saved per unit/year</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS 3 STEP -->
+  <section id="how-it-works" class="py-20 px-4 bg-white" data-aos="fade-up">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-charcoal">From waste to worth – 3 simple steps</h2>
+      <div class="grid md:grid-cols-3 gap-8 mt-16">
+        <div class="step-card"><span class="text-6xl font-black text-green-brand/20">1</span><div class="feature-icon"><i class="fas fa-apple-alt"></i></div><h3 class="text-2xl font-bold">Feed organic waste</h3><p class="text-gray-500">Kitchen scraps, cattle dung, food waste go into the inlet.</p></div>
+        <div class="step-card"><span class="text-6xl font-black text-green-brand/20">2</span><div class="feature-icon"><i class="fas fa-vial"></i></div><h3 class="text-2xl font-bold">Anaerobic digestion</h3><p class="text-gray-500">Microbes break down matter in oxygen‑free tank.</p></div>
+        <div class="step-card"><span class="text-6xl font-black text-green-brand/20">3</span><div class="feature-icon"><i class="fas fa-fill-drip"></i></div><h3 class="text-2xl font-bold">Gas + fertilizer</h3><p class="text-gray-500">Biogas for cooking & rich slurry for plants.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS GRID + INDUSTRIES WE SERVE -->
+  <section class="bg-green-brand/5 py-20 px-4" data-aos="fade-up">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-16">
+        <!-- bullet list benefits -->
+        <div>
+          <h2 class="text-3xl font-bold text-charcoal">Cleaner, cheaper, smarter</h2>
+          <div class="grid grid-cols-2 gap-4 mt-8">
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-green-brand text-xl"></i> <span>No smoke</span></div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-green-brand text-xl"></i> <span>No smell</span></div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-green-brand text-xl"></i> <span>Reduces waste</span></div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-green-brand text-xl"></i> <span>Saves LPG cost</span></div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-green-brand text-xl"></i> <span>100% organic</span></div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-green-brand text-xl"></i> <span>Low maintenance</span></div>
+          </div>
+        </div>
+        <!-- industries served grid -->
+        <div>
+          <h2 class="text-3xl font-bold text-charcoal">Industries we serve</h2>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-8">
+            <div class="industry-tile"><i class="fas fa-home"></i> <span>Homeowners</span></div>
+            <div class="industry-tile"><i class="fas fa-utensils"></i> <span>Restaurants</span></div>
+            <div class="industry-tile"><i class="fas fa-building"></i> <span>Apartments</span></div>
+            <div class="industry-tile"><i class="fas fa-tractor"></i> <span>Farms</span></div>
+            <div class="industry-tile"><i class="fas fa-school"></i> <span>Hostels</span></div>
+            <div class="industry-tile"><i class="fas fa-city"></i> <span>Government</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="py-20 px-4 bg-white" data-aos="fade-up">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-charcoal">Trusted by 500+ families & institutions</h2>
+      <div class="grid md:grid-cols-3 gap-8 mt-16">
+        <div class="testimonial-card"><i class="fas fa-quote-left text-green-brand text-2xl"></i><p class="italic my-4">"Our apartment complex saves ₹8,000/month on LPG. No smell at all!"</p><div class="font-bold">– Greenwoods Apartment, Pune</div></div>
+        <div class="testimonial-card"><i class="fas fa-quote-left text-green-brand text-2xl"></i><p class="italic my-4">"Grener Bio installed at our restaurant. Kitchen waste is now free fuel."</p><div class="font-bold">– Anand Bhavan, Chennai</div></div>
+        <div class="testimonial-card"><i class="fas fa-quote-left text-green-brand text-2xl"></i><p class="italic my-4">"Great support & very affordable. We use the slurry for our organic farm."</p><div class="font-bold">– Ranganathan Dairy, Karnataka</div></div>
+      </div>
+    </div>
+  </section>
+
+<!-- CTA BANNER -->
+<section class="bg-charcoal text-white py-20 px-4 text-center" data-aos="fade-up">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-4xl font-bold mb-6">Ready to turn waste into energy?</h2>
+    <p class="text-gray-300 text-lg mb-8">Get a free site inspection and custom quote. No obligation.</p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a href="pages/contact.html#inspection" class="btn-outline border-2 border-white text-white hover:border-white hover:shadow-[0_0_15px_rgba(255,255,255,0.7)] hover:bg-transparent hover:text-white font-semibold px-8 py-3 rounded-full transition-all duration-300">Book Inspection</a>
+      <a href="pages/contact.html" class="btn-outline border-2 border-white text-white hover:border-white hover:shadow-[0_0_15px_rgba(255,255,255,0.7)] hover:bg-transparent hover:text-white font-semibold px-8 py-3 rounded-full transition-all duration-300">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+  <!-- COST SAVINGS CALCULATOR (mini interactive JS) -->
+  <section class="py-20 px-4 bg-gray-50" data-aos="fade-up">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold">💰 Estimate your LPG savings</h2>
+      <div id="calc-card" class="bg-white p-8 mt-10 rounded-3xl shadow-xl">
+        <label class="block text-left font-medium mb-2">Number of LPG cylinders you use per month:</label>
+        <input type="number" id="cylinders" value="3" min="1" max="20" class="w-full border border-gray-300 rounded-full px-5 py-3 mb-6">
+        <p class="text-left">Monthly savings: <span id="saving-amount" class="text-2xl font-bold text-green-brand">₹2,250</span> (approx)</p>
+        <p class="text-sm text-gray-500 mt-2">*based on 75% replacement with biogas. Actual may vary.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ (structured for SEO) -->
+  <section class="py-20 px-4 bg-white" itemscope itemtype="https://schema.org/FAQPage">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-center text-charcoal">Frequently asked questions</h2>
+      <div class="mt-12 space-y-4">
+        <div class="border rounded-2xl p-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name" class="font-semibold text-lg">Does the biogas plant smell?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text" class="text-gray-600 mt-2">No, our micro‑feed design is fully sealed and includes a bio‑filter – zero odour.</div></div>
+        </div>
+        <div class="border rounded-2xl p-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name" class="font-semibold text-lg">What kind of waste can I feed?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text" class="text-gray-600 mt-2">Fruit/vegetable peels, leftover food, cattle dung, and organic garden waste.</div></div>
+        </div>
+        <div class="border rounded-2xl p-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name" class="font-semibold text-lg">Is it safe for apartments?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text" class="text-gray-600 mt-2">Absolutely – our systems meet safety standards and can be installed in basements/backyards.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (with contact & quick links) -->
+  <footer class="bg-charcoal text-white pt-16 pb-8 px-6">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+      <div>
+        <div class="flex items-center gap-2"><i class="fas fa-leaf text-3xl text-green-brand"></i><span class="font-bold text-2xl">Grener Bio</span></div>
+        <p class="text-sm text-gray-400 mt-4"><i class="fas fa-map-pin mr-2"></i>31/16, Thiruvalluvar Street,<br>Nehru Nagar, Velachery,<br>Chennai - 600042</p>
+        <p class="text-sm text-gray-400 mt-2"><i class="fas fa-phone mr-2"></i>+91 8124820036</p>
+      </div>
+      <div>
+        <h4 class="font-bold text-lg">Quick links</h4>
+        <ul class="mt-4 space-y-2 text-gray-400">
+          <li><a href="pages/about.html" class="footer-link">About us</a></li>
+          <li><a href="pages/products.html" class="footer-link">Products</a></li>
+          <li><a href="pages/projects.html" class="footer-link">Projects</a></li>
+          <li><a href="pages/gallery.html" class="footer-link">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-lg">Support</h4>
+        <ul class="mt-4 space-y-2 text-gray-400">
+          <li><a href="pages/contact.html" class="footer-link">Contact</a></li>
+          <li><a href="pages/installation.html" class="footer-link">Installation</a></li>
+          <li><a href="pages/tutorials.html" class="footer-link">Tutorials</a></li>
+          <li><a href="#" class="footer-link">Privacy policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-lg">Follow us</h4>
+        <div class="flex gap-4 mt-4 text-2xl">
+          <a href="#" class="footer-link"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="footer-link"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="footer-link"><i class="fab fa-facebook"></i></a>
+        </div>
+        <p class="text-xs text-gray-500 mt-8">© 2025 Grener Bio. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- structured data (JSON-LD) for organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Grener Bio",
+    "url": "https://www.grenerbio.com",
+    "logo": "https://www.grenerbio.com/logo.png",
+    "sameAs": [
+      "https://www.linkedin.com/company/grenerbio"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-9876543210",
+      "contactType": "customer service",
+      "availableLanguage": "English"
+    }
+  }
+  </script>
+
+  <!-- scripts: AOS, popup, calculator -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Initialize AOS
+    AOS.init({ duration: 1000, once: true });
+
+    // Mobile menu functionality
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    if (hamburger && mobileMenu) {
+      hamburger.addEventListener('click', function() {
+        this.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+      });
+    }
+
+    // Lead popup after 5 seconds
+    setTimeout(() => {
+      const popup = document.getElementById('lead-popup');
+      if (popup) {
+        popup.classList.remove('popup-hidden');
+      }
+    }, 5000);
+
+    // Close popup
+    const closePopup = document.getElementById('close-popup');
+    if (closePopup) {
+      closePopup.addEventListener('click', function() {
+        document.getElementById('lead-popup').classList.add('popup-hidden');
+      });
+    }
+
+    // Simple savings calculator
+    const cylinderInput = document.getElementById('cylinders');
+    const savingSpan = document.getElementById('saving-amount');
+
+    function updateSavings() {
+      if (cylinderInput && savingSpan) {
+        let cyl = parseInt(cylinderInput.value) || 1;
+        let saving = cyl * 750; // ₹750 per cylinder approx
+        savingSpan.innerText = '₹' + saving.toLocaleString();
+      }
+    }
+
+    if (cylinderInput) {
+      cylinderInput.addEventListener('input', updateSavings);
+      updateSavings();
+    }
+  </script>
+</body>
+</html>

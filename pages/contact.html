@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Grener Bio | Get in Touch</title>
+  <meta name="description" content="Contact Grener Bio for biogas consultations, inspections, and support. We're here to help you go green.">
+  <link rel="icon" type="image/png" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%232F855A'/%3E%3Cpath d='M30 60 L45 25 L60 60 L52 60 L45 40 L38 60Z' fill='white'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* Additional styles for form feedback */
+    .popup-hidden {
+      display: none !important;
+    }
+    .notification {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      max-width: 400px;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      z-index: 1000;
+      display: none;
+      animation: slideIn 0.3s ease;
+    }
+    @keyframes slideIn {
+      from {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    .notification-success {
+      background-color: #10b981;
+      color: white;
+    }
+    .notification-error {
+      background-color: #ef4444;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <!-- Page Loader -->
+  <div id="page-loader" class="page-loader">
+    <div class="loader-spinner"></div>
+  </div>
+
+  <!-- Notification Container -->
+  <div id="notification" class="notification"></div>
+
+  <!-- LEAD POPUP -->
+  <div id="lead-popup" class="fixed bottom-6 right-6 max-w-sm bg-white rounded-2xl shadow-2xl border border-green-200 p-6 z-50 popup-hidden">
+    <button id="close-popup" class="absolute top-3 right-3 text-gray-500 hover:text-black"><i class="fas fa-times"></i></button>
+    <h3 class="text-xl font-bold text-green-brand mb-2">🌱 Download free biogas guide</h3>
+    <p class="text-sm text-gray-600 mb-4">Learn how you save 60% on LPG. Get expert tips.</p>
+    <form id="popupForm" class="flex flex-col gap-3">
+      <input type="email" id="popupEmail" placeholder="Your email" class="border border-gray-300 rounded-full px-4 py-2 text-sm" required>
+      <button type="submit" class="btn-primary text-sm py-2" id="popupSubmitBtn">Send me the guide</button>
+    </form>
+    <div id="popupMessage" class="mt-2 text-sm"></div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="sticky-nav px-6 md:px-12 py-4 flex items-center justify-between">
+    <a href="../index.html" class="logo">
+      <img src="../logo1.png" alt="biogas" width="40" height="40" style="object-fit: contain;">
+      <span>Grener Bio</span>
+    </a>
+
+    <ul class="nav-menu">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="installation.html">Installation</a></li>
+      <li><a href="tutorials.html">Tutorials</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+
+    <div class="flex gap-3 items-center">
+      <a href="contact.html" class="btn-primary desktop-only text-sm">Get Quote</a>
+      <a href="#inspection" class="btn-outline desktop-only text-sm">Book Inspection</a>
+      <button class="hamburger" id="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <ul class="mobile-nav-menu" id="mobileMenu">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="installation.html">Installation</a></li>
+    <li><a href="tutorials.html">Tutorials</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+    <li class="flex gap-3 pt-4">
+      <a href="contact.html" class="btn-primary text-sm flex-1 text-center">Get Quote</a>
+      <a href="#inspection" class="btn-outline text-sm flex-1 text-center">Book Inspection</a>
+    </li>
+  </ul>
+
+  <!-- PAGE HEADER -->
+  <section class="bg-gradient-to-b from-green-50 to-white py-20 px-4">
+    <div class="max-w-7xl mx-auto text-center" data-aos="fade-up">
+      <h1 class="text-5xl md:text-6xl font-bold text-charcoal mb-6">Contact Us</h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">Have questions? Ready to start your biogas journey? We're here to help.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT GRID -->
+  <section class="py-20 px-4 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid lg:grid-cols-3 gap-8">
+        <!-- Contact Info -->
+        <div class="lg:col-span-1 space-y-6" data-aos="fade-right">
+          <div class="bg-gray-50 rounded-3xl p-8">
+            <h2 class="text-2xl font-bold mb-6">Get in Touch</h2>
+
+            <div class="space-y-6">
+              <div class="flex items-start gap-4">
+                <div class="feature-icon w-12 h-12 text-xl">
+                  <i class="fas fa-map-pin"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold mb-1">Visit Us</h3>
+                  <p class="text-gray-600">31/16, Thiruvalluvar Street, <br>Nehru Nagar, Velachery,<br> Chennai - 600042</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="feature-icon w-12 h-12 text-xl">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold mb-1">Call Us</h3>
+                  <p class="text-gray-600">+91 8124820036</p>
+                  <p class="text-gray-600">+91 8124820036 (WhatsApp)</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="feature-icon w-12 h-12 text-xl">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold mb-1">Email Us</h3>
+                  <p class="text-gray-600">tamilnadubiogas@gmail.com</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="feature-icon w-12 h-12 text-xl">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold mb-1">Business Hours</h3>
+                  <p class="text-gray-600">Mon-Sat: 9:00 AM - 7:00 PM</p>
+                  <p class="text-gray-600">Sunday: Closed</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-8 pt-6 border-t">
+              <h3 class="font-semibold mb-4">Follow Us</h3>
+              <div class="flex gap-4 text-2xl">
+                <a href="#" class="text-gray-400 hover:text-green-brand"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-gray-400 hover:text-green-brand"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-gray-400 hover:text-green-brand"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-gray-400 hover:text-green-brand"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="lg:col-span-2" data-aos="fade-left">
+          <div class="bg-white rounded-3xl shadow-xl p-8">
+            <h2 class="text-2xl font-bold mb-6">Send us a Message</h2>
+
+            <!-- FORM - DIRECT DISCORD INTEGRATION -->
+            <form id="contactForm" class="space-y-6">
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label class="block font-medium mb-2">Full Name *</label>
+                  <input type="text" name="name" required class="form-input">
+                </div>
+                <div>
+                  <label class="block font-medium mb-2">Email Address *</label>
+                  <input type="email" name="email" required class="form-input">
+                </div>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label class="block font-medium mb-2">Phone Number *</label>
+                  <input type="tel" name="phone" required class="form-input">
+                </div>
+                <div>
+                  <label class="block font-medium mb-2">City *</label>
+                  <input type="text" name="city" required class="form-input">
+                </div>
+              </div>
+
+              <div>
+                <label class="block font-medium mb-2">I'm interested in *</label>
+                <select name="interest" class="form-input">
+                  <option>Home Biogas System</option>
+                  <option>Community Biogas</option>
+                  <option>Industrial Biogas</option>
+                  <option>Installation Services</option>
+                  <option>Maintenance/AMC</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block font-medium mb-2">Message *</label>
+                <textarea name="message" rows="5" required class="form-input form-textarea"></textarea>
+              </div>
+
+              <div>
+                <button type="submit" class="btn-primary w-full" id="submitBtn">Send Message</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOK INSPECTION SECTION -->
+  <section id="inspection" class="py-20 px-4 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <div class="bg-white rounded-3xl shadow-xl p-8" data-aos="fade-up">
+        <div class="text-center mb-8">
+          <h2 class="text-3xl font-bold mb-4">Book a Free Site Inspection</h2>
+          <p class="text-gray-600">Our engineer will visit your location, assess your needs, and provide a custom quote.</p>
+        </div>
+
+        <!-- INSPECTION FORM - DIRECT DISCORD INTEGRATION -->
+        <form id="inspectionForm" class="grid md:grid-cols-2 gap-6">
+          <div>
+            <input type="text" name="name" placeholder="Full Name *" required class="form-input">
+          </div>
+          <div>
+            <input type="email" name="email" placeholder="Email Address *" required class="form-input">
+          </div>
+          <div>
+            <input type="tel" name="phone" placeholder="Phone Number *" required class="form-input">
+          </div>
+          <div>
+            <input type="text" name="city" placeholder="City *" required class="form-input">
+          </div>
+          <div>
+            <select name="preferred_date" class="form-input">
+              <option value="">Preferred Date (Weekday)</option>
+              <option value="Monday">Monday</option>
+              <option value="Tuesday">Tuesday</option>
+              <option value="Wednesday">Wednesday</option>
+              <option value="Thursday">Thursday</option>
+              <option value="Friday">Friday</option>
+              <option value="Saturday">Saturday</option>
+            </select>
+          </div>
+          <div>
+            <select name="preferred_time" class="form-input">
+              <option value="">Preferred Time</option>
+              <option value="9AM-12PM">9 AM - 12 PM</option>
+              <option value="12PM-3PM">12 PM - 3 PM</option>
+              <option value="3PM-6PM">3 PM - 6 PM</option>
+            </select>
+          </div>
+          <div class="md:col-span-2">
+            <textarea name="notes" placeholder="Additional notes or requirements" class="form-input form-textarea"></textarea>
+          </div>
+          <div class="md:col-span-2">
+            <button type="submit" class="btn-primary w-full" id="inspectionSubmitBtn">Request Inspection</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <section class="h-96 bg-gray-200">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.123456789!2d77.6!3d12.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDU0JzAwLjAiTiA3N8KwMzYnMDAuMCJF!5e0!3m2!1sen!2sin!4v1234567890" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 px-6">
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <i class="fas fa-leaf text-3xl text-green-brand"></i>
+          <span class="font-bold text-2xl">Grener Bio</span>
+        </div>
+        <p class="text-sm text-gray-400"><i class="fas fa-map-pin mr-2"></i>31/16, Thiruvalluvar Street, Nehru Nagar, Velachery, Chennai - 600042</p>
+        <p class="text-sm text-gray-400 mt-2"><i class="fas fa-phone mr-2"></i>+91 8124820036</p>
+      </div>
+      <div>
+        <h4 class="footer-heading">Quick links</h4>
+        <ul class="space-y-2 text-gray-400">
+          <li><a href="about.html" class="footer-link">About us</a></li>
+          <li><a href="products.html" class="footer-link">Products</a></li>
+          <li><a href="projects.html" class="footer-link">Projects</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Support</h4>
+        <ul class="space-y-2 text-gray-400">
+          <li><a href="contact.html" class="footer-link">Contact</a></li>
+          <li><a href="installation.html" class="footer-link">Installation</a></li>
+          <li><a href="tutorials.html" class="footer-link">Tutorials</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Follow us</h4>
+        <div class="flex gap-4 text-2xl">
+          <a href="#" class="footer-link"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="footer-link"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="footer-link"><i class="fab fa-facebook"></i></a>
+        </div>
+        <p class="text-xs text-gray-500 mt-8">© 2025 Grener Bio. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
+
+  <!-- DIRECT DISCORD INTEGRATION - NO GMAIL -->
+  <script>
+    // ✅ YOUR DISCORD WEBHOOK URL
+    const DISCORD_WEBHOOK = "https://discord.com/api/webhooks/1474312378156978250/rHobjr4dADVBi_bLq3LFDu_rIKvwkG8LUYqgn_K0gXiK_rb-01BhjRF7XirVdOmhzi5L";
+
+    // Utility function to show notification
+    function showNotification(type, message) {
+      const notification = document.getElementById('notification');
+      notification.className = `notification notification-${type}`;
+      notification.innerHTML = `<div class="flex items-center gap-3"><i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'} text-xl"></i><span>${message}</span></div>`;
+      notification.style.display = 'block';
+
+      setTimeout(() => {
+        notification.style.display = 'none';
+      }, 5000);
+    }
+
+    // Function to send to Discord
+    async function sendToDiscord(payload) {
+      // Create Discord embed
+      const discordPayload = {
+        username: "Grener Bio Website",
+        embeds: [{
+          title: payload.form_type === "inspection" ? "🔍 New Site Inspection Request" :
+                 payload.form_type === "guide" ? "📚 Free Guide Download" : "📩 New Contact Form Submission",
+          color: payload.form_type === "inspection" ? 16776960 : // Yellow for inspection
+                 payload.form_type === "guide" ? 3066993 : // Green for guide
+                 3447003, // Blue for contact
+          fields: [
+            { name: "👤 Name", value: payload.name || "N/A", inline: true },
+            { name: "📧 Email", value: payload.email || "N/A", inline: true },
+            { name: "📞 Phone", value: payload.phone || "N/A", inline: true },
+            { name: "🏙️ City", value: payload.city || "N/A", inline: true }
+          ],
+          timestamp: new Date().toISOString()
+        }]
+      };
+
+      // Add form-specific fields
+      if (payload.form_type === "inspection") {
+        discordPayload.embeds[0].fields.push(
+          { name: "📅 Preferred Date", value: payload.preferred_date || "Not specified", inline: true },
+          { name: "⏰ Preferred Time", value: payload.preferred_time || "Not specified", inline: true },
+          { name: "📝 Notes", value: payload.notes || "None", inline: false }
+        );
+      } else if (payload.form_type === "contact") {
+        discordPayload.embeds[0].fields.push(
+          { name: "📌 Interest", value: payload.interest || "N/A", inline: true },
+          { name: "📝 Message", value: payload.message || "N/A", inline: false }
+        );
+      }
+
+      const response = await fetch(DISCORD_WEBHOOK, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(discordPayload)
+      });
+
+      if (!response.ok) {
+        throw new Error('Discord webhook failed');
+      }
+
+      return response;
+    }
+
+    // Contact Form Submission
+    document.getElementById("contactForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const form = e.target;
+      const submitBtn = document.getElementById("submitBtn");
+
+      // Get form data
+      const payload = {
+        name: form.name.value,
+        email: form.email.value,
+        phone: form.phone.value,
+        city: form.city.value,
+        interest: form.interest.value,
+        message: form.message.value,
+        form_type: "contact"
+      };
+
+      // Disable button and show loading
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
+
+      try {
+        await sendToDiscord(payload);
+        showNotification('success', '✅ Message sent successfully! We\'ll get back to you soon.');
+        form.reset();
+      } catch (err) {
+        showNotification('error', '❌ Failed to send. Please email us directly at tamilnadubiogas@gmail.com');
+        console.error(err);
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'Send Message';
+      }
+    });
+
+    // Inspection Form Submission
+    document.getElementById("inspectionForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const form = e.target;
+      const submitBtn = document.getElementById("inspectionSubmitBtn");
+
+      // Get form data
+      const payload = {
+        name: form.name.value,
+        email: form.email.value,
+        phone: form.phone.value,
+        city: form.city.value,
+        preferred_date: form.preferred_date.value,
+        preferred_time: form.preferred_time.value,
+        notes: form.notes.value,
+        form_type: "inspection"
+      };
+
+      // Disable button and show loading
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Submitting...';
+
+      try {
+        await sendToDiscord(payload);
+        showNotification('success', '✅ Inspection request sent! Our team will contact you to confirm.');
+        form.reset();
+      } catch (err) {
+        showNotification('error', '❌ Failed to send. Please call us at +91 8124820036');
+        console.error(err);
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'Request Inspection';
+      }
+    });
+
+    // Popup Form Submission
+    document.getElementById("popupForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const email = document.getElementById("popupEmail").value;
+      const submitBtn = document.getElementById("popupSubmitBtn");
+      const popupMessage = document.getElementById("popupMessage");
+
+      const payload = {
+        name: "Guide Download",
+        email: email,
+        phone: "N/A",
+        city: "N/A",
+        form_type: "guide"
+      };
+
+      // Disable button and show loading
+      submitBtn.disabled = true;
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+      try {
+        await sendToDiscord(payload);
+        popupMessage.innerHTML = '<span class="text-green-600">✅ Guide sent! Check your inbox.</span>';
+        setTimeout(() => {
+          document.getElementById("lead-popup").classList.add("popup-hidden");
+          popupMessage.innerHTML = '';
+        }, 2000);
+      } catch (err) {
+        popupMessage.innerHTML = '<span class="text-red-600">❌ Failed. Email us directly.</span>';
+        console.error(err);
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+      }
+    });
+
+    // Close popup
+    document.getElementById("close-popup").addEventListener("click", () => {
+      document.getElementById("lead-popup").classList.add("popup-hidden");
+    });
+
+    // Show popup after 15 seconds
+    setTimeout(() => {
+      document.getElementById("lead-popup").classList.remove("popup-hidden");
+    }, 15000);
+
+    console.log("✅ Discord-only integration ready!");
+  </script>
+</body>
+</html>

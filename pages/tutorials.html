@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutorials - Grener Bio | Biogas Guides & Tips</title>
+  <meta name="description" content="Learn how to use and maintain your biogas system with Grener Bio's video tutorials and guides.">
+  <link rel="icon" type="image/png" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%232F855A'/%3E%3Cpath d='M30 60 L45 25 L60 60 L52 60 L45 40 L38 60Z' fill='white'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <!-- Page Loader -->
+  <div id="page-loader" class="page-loader">
+    <div class="loader-spinner"></div>
+  </div>
+
+  <!-- LEAD POPUP -->
+  <div id="lead-popup" class="fixed bottom-6 right-6 max-w-sm bg-white rounded-2xl shadow-2xl border border-green-200 p-6 z-50 popup-hidden">
+    <button id="close-popup" class="absolute top-3 right-3 text-gray-500 hover:text-black"><i class="fas fa-times"></i></button>
+    <h3 class="text-xl font-bold text-green-brand mb-2">🌱 Download free biogas guide</h3>
+    <p class="text-sm text-gray-600 mb-4">Learn how you save 60% on LPG. Get expert tips.</p>
+    <form class="flex flex-col gap-3">
+      <input type="email" placeholder="Your email" class="border border-gray-300 rounded-full px-4 py-2 text-sm" required>
+      <button type="submit" class="btn-primary text-sm py-2">Send me the guide</button>
+    </form>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="sticky-nav px-6 md:px-12 py-4 flex items-center justify-between">
+    <a href="../index.html" class="logo">
+      <img src="../logo1.png" alt="biogas" width="40" height="40" style="object-fit: contain;">
+      <span>Grener Bio</span>
+    </a>
+
+    <ul class="nav-menu">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="installation.html">Installation</a></li>
+      <li><a href="tutorials.html" class="active">Tutorials</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <div class="flex gap-3 items-center">
+      <a href="contact.html" class="btn-primary desktop-only text-sm">Get Quote</a>
+      <a href="contact.html#inspection" class="btn-outline desktop-only text-sm">Book Inspection</a>
+      <button class="hamburger" id="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <ul class="mobile-nav-menu" id="mobileMenu">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="services.html" class="active">Services</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="installation.html">Installation</a></li>
+    <li><a href="tutorials.html" class="active">Tutorials</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li class="flex gap-3 pt-4">
+      <a href="contact.html" class="btn-primary text-sm flex-1 text-center">Get Quote</a>
+      <a href="contact.html#inspection" class="btn-outline text-sm flex-1 text-center">Book Inspection</a>
+    </li>
+  </ul>
+
+  <!-- PAGE HEADER -->
+  <section class="bg-gradient-to-b from-green-50 to-white py-20 px-4">
+    <div class="max-w-7xl mx-auto text-center" data-aos="fade-up">
+      <h1 class="text-5xl md:text-6xl font-bold text-charcoal mb-6">Video Tutorials & Guides</h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">Learn how to operate, maintain, and troubleshoot your biogas system.</p>
+    </div>
+  </section>
+
+      <!-- FEATURED TUTORIAL -->
+  <section class="py-12 px-4 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <div class="bg-gray-50 rounded-3xl p-8" data-aos="fade-up">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <span class="text-green-brand font-semibold">Featured Tutorial</span>
+            <h2 class="text-3xl font-bold mt-2 mb-4">Getting Started with Your Biogas System</h2>
+            <p class="text-gray-600 mb-6">A complete beginner's guide to operating your new biogas plant. Learn about daily feeding, safety checks, and optimal usage.</p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-brand"></i> 15 minutes runtime</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-brand"></i> Available in English & Hindi</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-brand"></i> Includes downloadable checklist</li>
+            </ul>
+            <a href="https://www.youtube.com/@tamilnadubiogas8824" target="_blank" class="btn-primary inline-flex items-center">
+              Watch Now <i class="fas fa-play ml-2"></i>
+            </a>
+          </div>
+          <div>
+            <img src="../logo1.png" alt="Tutorial Thumbnail" class="rounded-2xl shadow-2xl">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TUTORIAL GRID -->
+  <section class="py-20 px-4 bg-gray-50">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-charcoal mb-16" data-aos="fade-up">All Tutorials</h2>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Tutorial 1 -->
+        <div class="tutorial-card" data-aos="fade-up">
+          <div class="tutorial-image">
+            <i class="fas fa-play-circle"></i>
+          </div>
+          <div class="tutorial-content">
+            <span class="text-sm text-green-brand font-semibold">Beginner</span>
+            <h3 class="text-xl font-bold mt-1 mb-2">Daily Feeding Guide</h3>
+            <p class="text-gray-600 text-sm mb-4">Learn what to feed, how much, and when for optimal gas production.</p>
+            <div class="flex items-center justify-between">
+              <span class="text-sm text-gray-500"><i class="far fa-clock mr-1"></i> 8 mins</span>
+              <button class="text-green-brand font-semibold hover:underline">Watch →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tutorial 2 -->
+        <div class="tutorial-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="tutorial-image">
+            <i class="fas fa-tools"></i>
+          </div>
+          <div class="tutorial-content">
+            <span class="text-sm text-green-brand font-semibold">Intermediate</span>
+            <h3 class="text-xl font-bold mt-1 mb-2">Monthly Maintenance</h3>
+            <p class="text-gray-600 text-sm mb-4">Step-by-step guide to cleaning filters, checking seals, and maintaining efficiency.</p>
+            <div class="flex items-center justify-between">
+              <span class="text-sm text-gray-500"><i class="far fa-clock mr-1"></i> 12 mins</span>
+              <button class="text-green-brand font-semibold hover:underline">Watch →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tutorial 3 -->
+        <div class="tutorial-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="tutorial-image">
+            <i class="fas fa-exclamation-triangle"></i>
+          </div>
+          <div class="tutorial-content">
+            <span class="text-sm text-green-brand font-semibold">Advanced</span>
+            <h3 class="text-xl font-bold mt-1 mb-2">Troubleshooting Guide</h3>
+            <p class="text-gray-600 text-sm mb-4">Fix common issues like low gas pressure, bad smell, or slow digestion.</p>
+            <div class="flex items-center justify-between">
+              <span class="text-sm text-gray-500"><i class="far fa-clock mr-1"></i> 15 mins</span>
+              <button class="text-green-brand font-semibold hover:underline">Watch →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tutorial 4 -->
+        <div class="tutorial-card" data-aos="fade-up">
+          <div class="tutorial-image">
+            <i class="fas fa-seedling"></i>
+          </div>
+          <div class="tutorial-content">
+            <span class="text-sm text-green-brand font-semibold">Beginner</span>
+            <h3 class="text-xl font-bold mt-1 mb-2">Using Slurry as Fertilizer</h3>
+            <p class="text-gray-600 text-sm mb-4">How to collect, store, and apply nutrient-rich slurry in your garden.</p>
+            <div class="flex items-center justify-between">
+              <span class="text-sm text-gray-500"><i class="far fa-clock mr-1"></i> 10 mins</span>
+              <button class="text-green-brand font-semibold hover:underline">Watch →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tutorial 5 -->
+        <div class="tutorial-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="tutorial-image">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <div class="tutorial-content">
+            <span class="text-sm text-green-brand font-semibold">Essential</span>
+            <h3 class="text-xl font-bold mt-1 mb-2">Safety Guidelines</h3>
+            <p class="text-gray-600 text-sm mb-4">Important safety practices for biogas system operation and maintenance.</p>
+            <div class="flex items-center justify-between">
+              <span class="text-sm text-gray-500"><i class="far fa-clock mr-1"></i> 7 mins</span>
+              <button class="text-green-brand font-semibold hover:underline">Watch →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tutorial 6 -->
+        <div class="tutorial-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="tutorial-image">
+            <i class="fas fa-temperature-high"></i>
+          </div>
+          <div class="tutorial-content">
+            <span class="text-sm text-green-brand font-semibold">Seasonal</span>
+            <h3 class="text-xl font-bold mt-1 mb-2">Winter Care Tips</h3>
+            <p class="text-gray-600 text-sm mb-4">Maintain biogas production during cold months with these simple tips.</p>
+            <div class="flex items-center justify-between">
+              <span class="text-sm text-gray-500"><i class="far fa-clock mr-1"></i> 6 mins</span>
+              <button class="text-green-brand font-semibold hover:underline">Watch →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOADABLE GUIDES -->
+  <section class="py-20 px-4 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-charcoal mb-16" data-aos="fade-up">Downloadable Resources</h2>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="border-2 border-gray-200 rounded-2xl p-6 text-center hover:border-green-brand transition" data-aos="fade-up">
+          <i class="fas fa-file-pdf text-5xl text-red-500 mb-4"></i>
+          <h3 class="text-xl font-bold mb-2">User Manual</h3>
+          <p class="text-gray-600 text-sm mb-4">Complete operation and maintenance guide for all models.</p>
+          <a href="#" class="text-green-brand font-semibold">Download PDF →</a>
+        </div>
+
+        <div class="border-2 border-gray-200 rounded-2xl p-6 text-center hover:border-green-brand transition" data-aos="fade-up" data-aos-delay="100">
+          <i class="fas fa-file-excel text-5xl text-green-600 mb-4"></i>
+          <h3 class="text-xl font-bold mb-2">Feeding Schedule</h3>
+          <p class="text-gray-600 text-sm mb-4">Excel template to track your daily waste input and gas output.</p>
+          <a href="#" class="text-green-brand font-semibold">Download XLS →</a>
+        </div>
+
+        <div class="border-2 border-gray-200 rounded-2xl p-6 text-center hover:border-green-brand transition" data-aos="fade-up" data-aos-delay="200">
+          <i class="fas fa-file-alt text-5xl text-blue-500 mb-4"></i>
+          <h3 class="text-xl font-bold mb-2">Troubleshooting Checklist</h3>
+          <p class="text-gray-600 text-sm mb-4">Quick reference guide for common issues and solutions.</p>
+          <a href="#" class="text-green-brand font-semibold">Download PDF →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 px-6">
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <i class="fas fa-leaf text-3xl text-green-brand"></i>
+          <span class="font-bold text-2xl">Grener Bio</span>
+        </div>
+        <p class="text-sm text-gray-400"><i class="fas fa-map-pin mr-2"></i>31/16, Thiruvalluvar Street,<br>Nehru Nagar, Velachery,<br>Chennai - 600042.</p>
+        <p class="text-sm text-gray-400 mt-2"><i class="fas fa-phone mr-2"></i>+91 8124820036</p>
+      </div>
+      <div>
+        <h4 class="footer-heading">Quick links</h4>
+        <ul class="space-y-2 text-gray-400">
+          <li><a href="about.html" class="footer-link">About us</a></li>
+          <li><a href="products.html" class="footer-link">Products</a></li>
+          <li><a href="tutorials.html" class="footer-link">Tutorials</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Support</h4>
+        <ul class="space-y-2 text-gray-400">
+          <li><a href="contact.html" class="footer-link">Contact</a></li>
+          <li><a href="installation.html" class="footer-link">Installation</a></li>
+          <li><a href="#" class="footer-link">FAQs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Follow us</h4>
+        <div class="flex gap-4 text-2xl">
+          <a href="#" class="footer-link"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="footer-link"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="footer-link"><i class="fab fa-facebook"></i></a>
+        </div>
+        <p class="text-xs text-gray-500 mt-8">© 2025 Grener Bio. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
+</body>
+</html>

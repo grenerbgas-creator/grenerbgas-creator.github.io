@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Grener Bio | Our Story & Team</title>
+  <meta name="description" content="Learn about Grener Bio's mission, vision, and the team behind India's most trusted biogas solutions.">
+  <link rel="icon" type="image/png" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%232F855A'/%3E%3Cpath d='M30 60 L45 25 L60 60 L52 60 L45 40 L38 60Z' fill='white'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <!-- Page Loader -->
+  <div id="page-loader" class="page-loader">
+    <div class="loader-spinner"></div>
+  </div>
+
+  <!-- LEAD POPUP -->
+  <div id="lead-popup" class="fixed bottom-6 right-6 max-w-sm bg-white rounded-2xl shadow-2xl border border-green-200 p-6 z-50 popup-hidden">
+    <button id="close-popup" class="absolute top-3 right-3 text-gray-500 hover:text-black"><i class="fas fa-times"></i></button>
+    <h3 class="text-xl font-bold text-green-brand mb-2">🌱 Download free biogas guide</h3>
+    <p class="text-sm text-gray-600 mb-4">Learn how you save 60% on LPG. Get expert tips.</p>
+    <form class="flex flex-col gap-3">
+      <input type="email" placeholder="Your email" class="border border-gray-300 rounded-full px-4 py-2 text-sm" required>
+      <button type="submit" class="btn-primary text-sm py-2">Send me the guide</button>
+    </form>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="sticky-nav px-6 md:px-12 py-4 flex items-center justify-between">
+    <a href="../index.html" class="logo">
+      <img src="../logo1.png" alt="biogas" width="40" height="40" style="object-fit: contain;">
+      <span>Grener Bio</span>
+    </a>
+
+    <ul class="nav-menu">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="installation.html">Installation</a></li>
+      <li><a href="tutorials.html">Tutorials</a></li>
+      <li><a href="about.html" class="active">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <div class="flex gap-3 items-center">
+      <a href="contact.html" class="btn-primary desktop-only text-sm">Get Quote</a>
+      <a href="contact.html#inspection" class="btn-outline desktop-only text-sm">Book Inspection</a>
+      <button class="hamburger" id="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <ul class="mobile-nav-menu" id="mobileMenu">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="services.html" class="active">Services</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="installation.html">Installation</a></li>
+    <li><a href="tutorials.html">Tutorials</a></li>
+    <li><a href="about.html" class="active">About Us</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li class="flex gap-3 pt-4">
+      <a href="contact.html" class="btn-primary text-sm flex-1 text-center">Get Quote</a>
+      <a href="contact.html#inspection" class="btn-outline text-sm flex-1 text-center">Book Inspection</a>
+    </li>
+  </ul>
+
+  <!-- PAGE HEADER -->
+  <section class="bg-gradient-to-b from-green-50 to-white py-20 px-4">
+    <div class="max-w-7xl mx-auto text-center" data-aos="fade-up">
+      <h1 class="text-5xl md:text-6xl font-bold text-charcoal mb-6">About Grener Bio</h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">Making clean energy accessible to every Indian home and business since 2015.</p>
+    </div>
+  </section>
+
+  <!-- MISSION & VISION -->
+  <section class="py-20 px-4 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-12">
+        <div data-aos="fade-right">
+          <h2 class="text-3xl font-bold mb-6">Our Mission</h2>
+          <p class="text-gray-600 text-lg leading-relaxed">Our mission is to simplify biogas technology by providing a portable, government-approved, and self-serviceable kit. We are committed to lowering the barrier to renewable energy, enabling anyone with a basic HDPE tank and local materials to build their own efficient biogas system and actively participate in a circular economy.</p>
+        </div>
+        <div data-aos="fade-left">
+          <h2 class="text-3xl font-bold mb-6">Our Vision</h2>
+          <p class="text-gray-600 text-lg leading-relaxed">To empower every household and community to transform organic waste into a source of renewable energy, creating a world where clean, self-sufficient, and sustainable living is accessible to all.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="py-20 px-4 bg-gray-50">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-charcoal mb-16" data-aos="fade-up">Our Core Values</h2>
+
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="text-center" data-aos="fade-up">
+          <div class="feature-icon mx-auto">
+            <i class="fas fa-leaf"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Sustainability</h3>
+          <p class="text-gray-600">Committed to environmental impact through every installation.</p>
+        </div>
+
+        <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+          <div class="feature-icon mx-auto">
+            <i class="fas fa-hand-holding-heart"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Integrity</h3>
+          <p class="text-gray-600">Honest advice, transparent pricing, and quality products.</p>
+        </div>
+
+        <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+          <div class="feature-icon mx-auto">
+            <i class="fas fa-flask"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Innovation</h3>
+          <p class="text-gray-600">Continuous R&D to improve efficiency and user experience.</p>
+        </div>
+
+        <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+          <div class="feature-icon mx-auto">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Community</h3>
+          <p class="text-gray-600">Building a network of clean energy champions across India.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <!-- TEAM SECTION -->
+<section class="py-20 px-4 bg-white">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold text-center text-charcoal mb-16" data-aos="fade-up">Meet Our Leadership</h2>
+
+    <div class="grid md:grid-cols-3 gap-8">
+     <!-- Team Member 1 -->
+      <div class="team-card" data-aos="fade-up">
+        <div class="team-image">
+          <img src="../person2.png" alt="Rajesh Kumar" class="w-32 h-32 rounded-full object-cover mx-auto">
+        </div>
+        <h3 class="text-2xl font-bold">Rajesh Kumar</h3>
+        <p class="text-green-brand font-semibold mb-4">Founder & CEO</p>
+        <p class="text-gray-600 text-sm">IIT Delhi alumnus with 15 years in renewable energy. Passionate about sustainable solutions for urban India.</p>
+        <div class="flex justify-center gap-4 mt-6">
+          <a href="#" class="text-gray-400 hover:text-green-brand"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="text-gray-400 hover:text-green-brand"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+
+         <!-- Team Member 2 -->
+      <div class="team-card" data-aos="fade-up">
+        <div class="team-image">
+          <img src="../person1.png" alt="KAMARAJ" class="w-32 h-32 rounded-full object-cover mx-auto">
+        </div>
+        <h3 class="text-2xl font-bold">Prof. Dr. Er. S. KAMARAJ</h3>
+        <p class="text-green-brand font-semibold mb-4">Founder</p>
+        <p class="text-gray-600 text-sm">C.V of Prof. Dr. Er. S. KAMARAJ, ex. Professor & Head, Department of Bio-energy, Tamilnadu Agricultural University and presently Director, International Institute of Renewable Energy, NERD Society, Vadavalli, Coimbatore-641 041.</p>
+        <div class="flex justify-center gap-4 mt-6">
+          <a href="#" class="text-gray-400 hover:text-green-brand"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="text-gray-400 hover:text-green-brand"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+
+         <!-- Team Member 3 -->
+      <div class="team-card" data-aos="fade-up">
+        <div class="team-image">
+          <img src="/path/to/your/rajesh-kumar-photo.jpg" alt="Rajesh Kumar" class="w-32 h-32 rounded-full object-cover mx-auto">
+        </div>
+        <h3 class="text-2xl font-bold">Rajesh Kumar</h3>
+        <p class="text-green-brand font-semibold mb-4">Founder & CEO</p>
+        <p class="text-gray-600 text-sm">IIT Delhi alumnus with 15 years in renewable energy. Passionate about sustainable solutions for urban India.</p>
+        <div class="flex justify-center gap-4 mt-6">
+          <a href="#" class="text-gray-400 hover:text-green-brand"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="text-gray-400 hover:text-green-brand"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MILESTONES -->
+  <section class="py-20 px-4 bg-gray-50">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-charcoal mb-16" data-aos="fade-up">Our Impact</h2>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="text-center" data-aos="fade-up">
+          <div class="text-5xl font-bold text-green-brand mb-2">500+</div>
+          <p class="text-gray-600">Installations</p>
+        </div>
+        <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+          <div class="text-5xl font-bold text-green-brand mb-2">30+</div>
+          <p class="text-gray-600">Cities</p>
+        </div>
+        <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+          <div class="text-5xl font-bold text-green-brand mb-2">1000T</div>
+          <p class="text-gray-600">CO₂ Saved</p>
+        </div>
+        <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+          <div class="text-5xl font-bold text-green-brand mb-2">10+</div>
+          <p class="text-gray-600">Years Experience</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 px-6">
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <i class="fas fa-leaf text-3xl text-green-brand"></i>
+          <span class="font-bold text-2xl">Grener Bio</span>
+        </div>
+        <p class="text-sm text-gray-400"><i class="fas fa-map-pin mr-2"></i>31/16, Thiruvalluvar Street,<br>Nehru Nagar, Velachery,<br>Chennai - 600042.</p>
+        <p class="text-sm text-gray-400 mt-2"><i class="fas fa-phone mr-2"></i>+91 8124820036</p>
+      </div>
+      <div>
+        <h4 class="footer-heading">Quick links</h4>
+        <ul class="space-y-2 text-gray-400">
+          <li><a href="about.html" class="footer-link">About us</a></li>
+          <li><a href="products.html" class="footer-link">Products</a></li>
+          <li><a href="projects.html" class="footer-link">Projects</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Support</h4>
+        <ul class="space-y-2 text-gray-400">
+          <li><a href="contact.html" class="footer-link">Contact</a></li>
+          <li><a href="installation.html" class="footer-link">Installation</a></li>
+          <li><a href="tutorials.html" class="footer-link">Tutorials</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Follow us</h4>
+        <div class="flex gap-4 text-2xl">
+          <a href="#" class="footer-link"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="footer-link"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="footer-link"><i class="fab fa-facebook"></i></a>
+        </div>
+        <p class="text-xs text-gray-500 mt-8">© 2025 Grener Bio. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
+</body>
+</html>
