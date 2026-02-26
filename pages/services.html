@@ -13,7 +13,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.grenerbio.com/pages/services.html">
   <meta property="og:image" content="https://images.unsplash.com/photo-1581092335871-4c7ff3f3f6d5?q=80&w=2070&auto=format&fit=crop">
-  <!-- favicon (same as index) -->
+  <!-- favicon -->
   <link rel="icon" type="image/png" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%232F855A'/%3E%3Cpath d='M30 60 L45 25 L60 60 L52 60 L45 40 L38 60Z' fill='white'/%3E%3C/svg%3E">
   <!-- Font & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,7 +25,7 @@
   <!-- AOS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
-    /* Same custom styles as index page */
+    /* Base Styles */
     body {
       font-family: 'Inter', 'Poppins', sans-serif;
       color: #1e1e1e;
@@ -51,6 +51,8 @@
     .text-charcoal {
       color: #2d2d2d;
     }
+
+    /* Button Styles */
     .btn-primary {
       background-color: #2F855A;
       color: white;
@@ -59,6 +61,7 @@
       font-weight: 600;
       transition: all 0.2s;
       box-shadow: 0 4px 6px -1px rgba(47,133,90,0.2);
+      display: inline-block;
     }
     .btn-primary:hover {
       background-color: #1f5f3f;
@@ -73,12 +76,14 @@
       border-radius: 9999px;
       font-weight: 600;
       transition: 0.2s;
+      display: inline-block;
     }
     .btn-outline:hover {
       background-color: #2F855A;
       color: white;
     }
-    /* sticky nav - same as index */
+
+    /* Navigation */
     .sticky-nav {
       position: sticky;
       top: 0;
@@ -87,10 +92,23 @@
       background-color: rgba(255,255,255,0.9);
       border-bottom: 1px solid #eaeaea;
     }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+    .logo span {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #2d2d2d;
+    }
     .nav-menu {
       display: flex;
       gap: 2rem;
       list-style: none;
+      margin: 0;
+      padding: 0;
     }
     .nav-menu a {
       font-weight: 500;
@@ -117,7 +135,8 @@
       background-color: #2F855A;
       border-radius: 2px;
     }
-    /* mobile menu */
+
+    /* Mobile Drawer (Slide from Right) */
     .hamburger {
       display: none;
       flex-direction: column;
@@ -125,6 +144,7 @@
       cursor: pointer;
       background: none;
       border: none;
+      z-index: 60;
     }
     .bar {
       width: 25px;
@@ -141,38 +161,86 @@
     .hamburger.active .bar:nth-child(3) {
       transform: translateY(-8px) rotate(-45deg);
     }
-    .mobile-nav-menu {
-      display: none;
-      background: white;
-      width: 100%;
-      padding: 1rem;
-      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
-      list-style: none;
-      position: absolute;
-      top: 100%;
+
+    .mobile-overlay {
+      position: fixed;
+      top: 0;
       left: 0;
-      z-index: 40;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.4);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s;
+      z-index: 55;
+      backdrop-filter: blur(2px);
     }
-    .mobile-nav-menu.active {
-      display: block;
+    .mobile-overlay.active {
+      opacity: 1;
+      visibility: visible;
     }
-    .mobile-nav-menu li {
-      padding: 0.75rem 0;
-      border-bottom: 1px solid #eaeaea;
+
+    .mobile-nav-drawer {
+      position: fixed;
+      top: 0;
+      right: -320px;
+      width: 300px;
+      max-width: 80vw;
+      height: 100%;
+      background-color: white;
+      box-shadow: -10px 0 25px -5px rgba(0,0,0,0.2);
+      z-index: 56;
+      transition: right 0.3s ease-in-out;
+      padding: 2rem 1.5rem;
+      overflow-y: auto;
     }
-    .mobile-nav-menu li:last-child {
-      border-bottom: none;
+    .mobile-nav-drawer.active {
+      right: 0;
     }
-    .mobile-nav-menu a {
+
+    .mobile-nav-drawer ul {
+      list-style: none;
+      margin-top: 2.5rem;
+    }
+    .mobile-nav-drawer li {
+      margin-bottom: 1.25rem;
+    }
+    .mobile-nav-drawer a {
       text-decoration: none;
       color: #2d2d2d;
       font-weight: 500;
+      font-size: 1.1rem;
       display: block;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #f0f0f0;
+      transition: color 0.2s;
     }
-    .mobile-nav-menu a:hover,
-    .mobile-nav-menu a.active {
+    .mobile-nav-drawer a:hover,
+    .mobile-nav-drawer a.active {
       color: #2F855A;
     }
+    .close-drawer-btn {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.5rem;
+      font-size: 1.8rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #555;
+    }
+    .mobile-cta-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+    .mobile-cta-group a {
+      text-align: center;
+      margin: 0;
+      border-bottom: none !important;
+    }
+
     @media(max-width:768px) {
       .hamburger {
         display: flex;
@@ -184,6 +252,7 @@
         display: none;
       }
     }
+
     /* Service-specific styles */
     .service-card {
       background: white;
@@ -229,14 +298,7 @@
     .section-padding {
       padding: 5rem 1rem;
     }
-    .footer-link {
-      color: #ccc;
-      transition: 0.2s;
-      text-decoration: none;
-    }
-    .footer-link:hover {
-      color: white;
-    }
+
     /* Gallery hover animations */
     .gallery-item {
       position: relative;
@@ -244,7 +306,7 @@
       border-radius: 1.5rem;
       box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
       cursor: pointer;
-      height: 320px;
+      height: 280px;
       transition: all 0.3s ease;
     }
     .gallery-item:hover {
@@ -294,15 +356,79 @@
     .gallery-item:hover .gallery-overlay p {
       transform: translateY(0);
     }
+
+    /* Footer */
+    .footer-link {
+      color: #ccc;
+      transition: 0.2s;
+      text-decoration: none;
+    }
+    .footer-link:hover {
+      color: white;
+    }
+
+    /* Page Loader */
+    .page-loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.3s;
+    }
+    .loader-spinner {
+      width: 50px;
+      height: 50px;
+      border: 3px solid #f3f3f3;
+      border-top: 3px solid #2F855A;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Lead Popup */
+    #lead-popup {
+      transition: opacity 0.3s, transform 0.3s;
+      transform: translateY(0);
+    }
+    .popup-hidden {
+      opacity: 0 !important;
+      pointer-events: none;
+      transform: translateY(20px) !important;
+    }
   </style>
 </head>
 <body>
-  <!-- STICKY NAVIGATION - Same as index but with Services as active -->
+  <!-- Page Loader -->
+  <div id="page-loader" class="page-loader">
+    <div class="loader-spinner"></div>
+  </div>
+
+  <!-- LEAD POPUP -->
+  <div id="lead-popup" class="fixed bottom-6 right-6 max-w-sm bg-white rounded-2xl shadow-2xl border border-green-200 p-6 z-50 popup-hidden">
+    <button id="close-popup" class="absolute top-3 right-3 text-gray-500 hover:text-black"><i class="fas fa-times"></i></button>
+    <h3 class="text-xl font-bold text-green-brand mb-2">🌱 Download free biogas guide</h3>
+    <p class="text-sm text-gray-600 mb-4">Learn how you save 60% on LPG. Get expert tips.</p>
+    <form class="flex flex-col gap-3">
+      <input type="email" placeholder="Your email" class="border border-gray-300 rounded-full px-4 py-2 text-sm" required>
+      <button type="submit" class="btn-primary text-sm py-2">Send me the guide</button>
+    </form>
+  </div>
+
+  <!-- STICKY NAVIGATION - with slide from right drawer -->
   <nav class="sticky-nav px-6 md:px-12 py-4 flex items-center justify-between">
-    <div class="flex items-center gap-2">
+    <a href="../index.html" class="logo">
       <img src="../logo1.png" alt="biogas" width="40" height="40" style="object-fit: contain;">
-      <span class="font-bold text-2xl tracking-tight text-charcoal">Grener Bio</span>
-    </div>
+      <span>Grener Bio</span>
+    </a>
 
     <!-- Desktop Menu -->
     <ul class="nav-menu">
@@ -318,8 +444,8 @@
     </ul>
 
     <div class="flex gap-3 items-center">
-      <a href="contact.html" class="btn-primary hidden lg:inline-block text-sm">Get Quote</a>
-      <a href="contact.html#inspection" class="btn-outline hidden lg:inline-block text-sm">Book Inspection</a>
+      <a href="contact.html" class="btn-primary desktop-only text-sm">Get Quote</a>
+      <a href="contact.html#inspection" class="btn-outline desktop-only text-sm">Book Inspection</a>
 
       <!-- Mobile Hamburger -->
       <button class="hamburger" id="hamburger">
@@ -330,22 +456,26 @@
     </div>
   </nav>
 
-  <!-- Mobile Menu -->
-  <ul class="mobile-nav-menu" id="mobileMenu">
-    <li><a href="../index.html">Home</a></li>
-    <li><a href="products.html">Products</a></li>
-    <li><a href="services.html" class="active">Services</a></li>
-    <li><a href="projects.html">Projects</a></li>
-    <li><a href="gallery.html">Gallery</a></li>
-    <li><a href="installation.html">Installation</a></li>
-    <li><a href="tutorials.html">Tutorials</a></li>
-    <li><a href="about.html">About Us</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    <li class="flex gap-3 pt-4">
-      <a href="contact.html" class="btn-primary text-sm flex-1 text-center">Get Quote</a>
-      <a href="contact.html#inspection" class="btn-outline text-sm flex-1 text-center">Book Inspection</a>
-    </li>
-  </ul>
+  <!-- Mobile overlay & drawer (slide from right) -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-nav-drawer" id="mobileDrawer">
+    <button class="close-drawer-btn" id="closeDrawerBtn">&times;</button>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="installation.html">Installation</a></li>
+      <li><a href="tutorials.html">Tutorials</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="mobile-cta-group">
+      <a href="contact.html" class="btn-primary text-sm">Get Quote</a>
+      <a href="contact.html#inspection" class="btn-outline text-sm text-center">Book Inspection</a>
+    </div>
+  </div>
 
   <!-- PAGE HERO - Services -->
   <section class="section-padding pt-10 md:pt-16 bg-white" data-aos="fade-up">
@@ -382,7 +512,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <!-- Gallery Item 1 -->
         <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-          <img src="../service1.jpg" alt="Biogas Training Session">
+          <img src="../service1.jpg" alt="Biogas Training Session" onerror="this.src='https://via.placeholder.com/400x300?text=Training+Session'">
           <div class="gallery-overlay">
             <h3>Entrepreneurship Training</h3>
             <p>Batch of 15 aspiring biogas entrepreneurs learning installation techniques</p>
@@ -391,7 +521,7 @@
 
         <!-- Gallery Item 2 -->
         <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-          <img src="../service2.jpg" alt="Biogas Plant Installation">
+          <img src="../service2.jpg" alt="Biogas Plant Installation" onerror="this.src='https://via.placeholder.com/400x300?text=Commercial+Plant'">
           <div class="gallery-overlay">
             <h3>Commercial Biogas Plant</h3>
             <p>5 TPD bottling plant commissioning, Maharashtra</p>
@@ -400,7 +530,7 @@
 
         <!-- Gallery Item 3 -->
         <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
-          <img src="../service3.jpg" alt="Community Biogas">
+          <img src="../service3.jpg" alt="Community Biogas" onerror="this.src='https://via.placeholder.com/400x300?text=Community+Biogas'">
           <div class="gallery-overlay">
             <h3>Community Biogas Unit</h3>
             <p>Serving 200+ families at Greenwoods Apartment, Pune</p>
@@ -409,7 +539,7 @@
 
         <!-- Gallery Item 4 -->
         <div class="gallery-item" data-aos="fade-up" data-aos-delay="400">
-          <img src="../service4.jpg" alt="Customer Handover">
+          <img src="../service4.jpg" alt="Customer Handover" onerror="this.src='https://via.placeholder.com/400x300?text=Customer+Handover'">
           <div class="gallery-overlay">
             <h3>Customer Handover</h3>
             <p>Training residents on daily operations and maintenance</p>
@@ -737,18 +867,18 @@
   </section>
 
   <!-- CTA SECTION -->
-<section class="bg-charcoal text-white py-20 px-4 text-center" data-aos="fade-up">
-  <div class="max-w-3xl mx-auto">
-    <h2 class="text-4xl font-bold mb-6">Ready to Start Your Biogas Journey?</h2>
-    <p class="text-gray-300 text-lg mb-8">Join our next training batch or book a consultation with our experts.</p>
-    <div class="flex flex-wrap gap-4 justify-center">
-      <a href="contact.html" class="btn-outline border-2 border-white text-white hover:border-white hover:shadow-[0_0_15px_rgba(255,255,255,0.7)] hover:bg-transparent hover:text-white font-semibold px-8 py-3 rounded-full transition-all duration-300">Enroll Now</a>
-      <a href="contact.html#consultation" class="btn-outline border-2 border-white text-white hover:border-white hover:shadow-[0_0_15px_rgba(255,255,255,0.7)] hover:bg-transparent hover:text-white font-semibold px-8 py-3 rounded-full transition-all duration-300">Talk to an Expert</a>
+  <section class="bg-charcoal text-white py-20 px-4 text-center" data-aos="fade-up">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-4xl font-bold mb-6">Ready to Start Your Biogas Journey?</h2>
+      <p class="text-gray-300 text-lg mb-8">Join our next training batch or book a consultation with our experts.</p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="contact.html" class="btn-outline border-2 border-white text-white hover:border-white hover:shadow-[0_0_15px_rgba(255,255,255,0.7)] hover:bg-transparent hover:text-white font-semibold px-8 py-3 rounded-full transition-all duration-300">Enroll Now</a>
+        <a href="contact.html#consultation" class="btn-outline border-2 border-white text-white hover:border-white hover:shadow-[0_0_15px_rgba(255,255,255,0.7)] hover:bg-transparent hover:text-white font-semibold px-8 py-3 rounded-full transition-all duration-300">Talk to an Expert</a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-  <!-- FOOTER (same as index) -->
+  <!-- FOOTER -->
   <footer class="bg-charcoal text-white pt-16 pb-8 px-6">
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
       <div>
@@ -792,24 +922,72 @@
     // Initialize AOS
     AOS.init({ duration: 1000, once: true });
 
-    // Mobile menu functionality
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
+    // Page loader
+    window.addEventListener('load', function() {
+      const loader = document.getElementById('page-loader');
+      if (loader) {
+        loader.style.opacity = '0';
+        setTimeout(() => {
+          loader.style.display = 'none';
+        }, 300);
+      }
+    });
 
-    if (hamburger && mobileMenu) {
-      hamburger.addEventListener('click', function() {
-        this.classList.toggle('active');
-        mobileMenu.classList.toggle('active');
-      });
+    // Mobile drawer functionality (slide from right)
+    const hamburger = document.getElementById('hamburger');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+    const closeDrawerBtn = document.getElementById('closeDrawerBtn');
+
+    function openDrawer() {
+      hamburger.classList.add('active');
+      mobileDrawer.classList.add('active');
+      mobileOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
     }
 
-    // Set active state for mobile menu links based on current page
-    const currentPage = 'services.html';
-    const mobileLinks = mobileMenu ? mobileMenu.getElementsByTagName('a') : [];
-    for (let link of mobileLinks) {
-      if (link.getAttribute('href') === currentPage) {
-        link.classList.add('active');
+    function closeDrawer() {
+      hamburger.classList.remove('active');
+      mobileDrawer.classList.remove('active');
+      mobileOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    if (hamburger) {
+      hamburger.addEventListener('click', openDrawer);
+    }
+    if (closeDrawerBtn) {
+      closeDrawerBtn.addEventListener('click', closeDrawer);
+    }
+    if (mobileOverlay) {
+      mobileOverlay.addEventListener('click', closeDrawer);
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && mobileDrawer.classList.contains('active')) {
+        closeDrawer();
       }
+    });
+
+    // Close drawer when clicking on a link
+    const drawerLinks = document.querySelectorAll('.mobile-nav-drawer a');
+    drawerLinks.forEach(link => {
+      link.addEventListener('click', closeDrawer);
+    });
+
+    // Lead popup
+    setTimeout(() => {
+      const popup = document.getElementById('lead-popup');
+      if (popup) {
+        popup.classList.remove('popup-hidden');
+      }
+    }, 5000);
+
+    // Close popup
+    const closePopup = document.getElementById('close-popup');
+    if (closePopup) {
+      closePopup.addEventListener('click', function() {
+        document.getElementById('lead-popup').classList.add('popup-hidden');
+      });
     }
   </script>
 </body>
