@@ -317,15 +317,16 @@
   </style>
 </head>
 <body>
-  <!-- LEAD CAPTURE POPUP (hidden) -->
+  <!-- LEAD CAPTURE POPUP (hidden) - with Discord integration -->
   <div id="lead-popup" class="fixed bottom-6 right-6 max-w-sm bg-white rounded-2xl shadow-2xl border border-green-200 p-6 z-50 popup-hidden">
     <button id="close-popup" class="absolute top-3 right-3 text-gray-500 hover:text-black"><i class="fas fa-times"></i></button>
     <h3 class="text-xl font-bold text-green-brand mb-2">🌱 Download free biogas guide</h3>
     <p class="text-sm text-gray-600 mb-4">Learn how you save 60% on LPG. Get expert tips.</p>
-    <form class="flex flex-col gap-3">
-      <input type="email" placeholder="Your email" class="border border-gray-300 rounded-full px-4 py-2 text-sm">
-      <button type="submit" class="btn-primary text-sm py-2">Send me the guide</button>
+    <form id="popupForm" class="flex flex-col gap-3">
+      <input type="email" id="popupEmail" placeholder="Your email" class="border border-gray-300 rounded-full px-4 py-2 text-sm" required>
+      <button type="submit" class="btn-primary text-sm py-2" id="popupSubmitBtn">Send me the guide</button>
     </form>
+    <div id="popupMessage" class="mt-2 text-sm"></div>
   </div>
 
   <!-- STICKY NAVIGATION - UPDATED WITH SLIDE MENU FROM RIGHT -->
@@ -585,7 +586,7 @@
   }
   </script>
 
-  <!-- scripts: AOS, popup, calculator, mobile drawer -->
+  <!-- scripts: AOS, popup, calculator, mobile drawer, Discord integration -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     // Initialize AOS
@@ -630,6 +631,9 @@
       }
     });
 
+    // ✅ DISCORD WEBHOOK URL
+    const DISCORD_WEBHOOK = "https://discord.com/api/webhooks/1474312378156978250/rHobjr4dADVBi_bLq3LFDu_rIKvwkG8LUYqgn_K0gXiK_rb-01BhjRF7XirVdOmhzi5L";
+
     // Lead popup after 5 seconds
     setTimeout(() => {
       const popup = document.getElementById('lead-popup');
@@ -645,6 +649,61 @@
         document.getElementById('lead-popup').classList.add('popup-hidden');
       });
     }
+
+    // Popup Form Submission - Send to Discord
+    document.getElementById("popupForm")?.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const email = document.getElementById("popupEmail").value;
+      const submitBtn = document.getElementById("popupSubmitBtn");
+      const popupMessage = document.getElementById("popupMessage");
+
+      // Disable button and show loading
+      submitBtn.disabled = true;
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+      try {
+        // Send to Discord
+        const discordPayload = {
+          username: "Grener Bio Website",
+          embeds: [{
+            title: "📚 Free Biogas Guide Download",
+            color: 3066993, // Green color
+            fields: [
+              { name: "📧 Email", value: email, inline: false },
+              { name: "📅 Date", value: new Date().toLocaleString(), inline: false },
+              { name: "🌐 Page", value: window.location.pathname, inline: false }
+            ],
+            timestamp: new Date().toISOString()
+          }]
+        };
+
+        const response = await fetch(DISCORD_WEBHOOK, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(discordPayload)
+        });
+
+        if (!response.ok) throw new Error('Discord webhook failed');
+
+        // Show success message
+        popupMessage.innerHTML = '<span class="text-green-600">✅ Guide sent! Check your inbox.</span>';
+        
+        // Close popup after 2 seconds
+        setTimeout(() => {
+          document.getElementById("lead-popup").classList.add("popup-hidden");
+          popupMessage.innerHTML = '';
+        }, 2000);
+        
+      } catch (err) {
+        popupMessage.innerHTML = '<span class="text-red-600">❌ Failed. Please email us directly at tamilnadubiogas@gmail.com</span>';
+        console.error(err);
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+      }
+    });
 
     // Simple savings calculator
     const cylinderInput = document.getElementById('cylinders');
