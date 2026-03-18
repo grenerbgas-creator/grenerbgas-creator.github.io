@@ -29,34 +29,63 @@ function initMobileMenu() {
     }
 }
 
-// Lead Popup
+// Lead Popup - Hide forever once closed (even after refresh)
 function initLeadPopup() {
+    console.log("initLeadPopup started");
+
     const leadPopup = document.getElementById('lead-popup');
     const closeBtn = document.getElementById('close-popup');
 
-    if (leadPopup && closeBtn) {
+    if (!leadPopup || !closeBtn) {
+        console.log("Popup or close button not found");
+        return;
+    }
+
+    // Check if popup was ever closed
+    const isPopupClosed = localStorage.getItem('popupClosed') === 'true';
+    console.log("isPopupClosed:", isPopupClosed);
+
+    // If already closed, ensure it's hidden and never shows
+    if (isPopupClosed) {
+        console.log("Popup was closed before - hiding permanently");
+        leadPopup.classList.add('popup-hidden');
+        // Don't set any timeout to show it
+    } else {
+        console.log("Popup never closed - will show after delay");
+
         // Show popup after 5 seconds
-        setTimeout(() => {
-            // Check if user has seen popup before
-            if (!localStorage.getItem('popupSeen')) {
-                leadPopup.classList.remove('popup-hidden');
-                localStorage.setItem('popupSeen', 'true');
-            }
+        const timer = setTimeout(() => {
+            console.log("5 seconds passed, showing popup");
+            leadPopup.classList.remove('popup-hidden');
         }, 5000);
 
+        // Close button click - hide forever
         closeBtn.addEventListener('click', function() {
+            console.log("Close button clicked");
             leadPopup.classList.add('popup-hidden');
+            localStorage.setItem('popupClosed', 'true');
+            console.log("popupClosed set to true - will never show again");
+
+            // Clear the timer so it doesn't try to show again
+            clearTimeout(timer);
         });
 
-        // Close on click outside
-        document.addEventListener('click', function(e) {
+        // Click outside to close
+        document.addEventListener('click', function outsideClickHandler(e) {
             if (!leadPopup.contains(e.target) && !leadPopup.classList.contains('popup-hidden')) {
+                console.log("Clicked outside - hiding forever");
                 leadPopup.classList.add('popup-hidden');
+                localStorage.setItem('popupClosed', 'true');
+
+                // Remove this listener to prevent multiple bindings
+                document.removeEventListener('click', outsideClickHandler);
+
+                // Clear the timer
+                clearTimeout(timer);
             }
         });
     }
 }
-
 // Page Loader
 function initLoaders() {
     const loader = document.getElementById('page-loader');

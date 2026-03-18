@@ -317,24 +317,12 @@
   </style>
 </head>
 <body>
-  <!-- LEAD CAPTURE POPUP (hidden) - with Discord integration -->
-  <div id="lead-popup" class="fixed bottom-6 right-6 max-w-sm bg-white rounded-2xl shadow-2xl border border-green-200 p-6 z-50 popup-hidden">
-    <button id="close-popup" class="absolute top-3 right-3 text-gray-500 hover:text-black"><i class="fas fa-times"></i></button>
-    <h3 class="text-xl font-bold text-green-brand mb-2">🌱 Download free biogas guide</h3>
-    <p class="text-sm text-gray-600 mb-4">Learn how you save 60% on LPG. Get expert tips.</p>
-    <form id="popupForm" class="flex flex-col gap-3">
-      <input type="email" id="popupEmail" placeholder="Your email" class="border border-gray-300 rounded-full px-4 py-2 text-sm" required>
-      <button type="submit" class="btn-primary text-sm py-2" id="popupSubmitBtn">Send me the guide</button>
-    </form>
-    <div id="popupMessage" class="mt-2 text-sm"></div>
-  </div>
 
   <!-- STICKY NAVIGATION - UPDATED WITH SLIDE MENU FROM RIGHT -->
   <nav class="sticky-nav px-6 md:px-12 py-4 flex items-center justify-between">
     <div class="flex items-center gap-2">
       <img src="logo1.png" alt="biogas" width="40" height="40" style="object-fit: contain;">
       <span class="font-bold text-2xl tracking-tight text-charcoal">Grener Bio</span>
-    </div>
 
     <!-- Desktop Menu -->
     <ul class="nav-menu">
@@ -413,15 +401,113 @@
     </div>
   </section>
 
-  <!-- WHY CHOOSE US (icons) -->
+    <!-- WHY CHOOSE US (with customer projects) -->
   <section class="bg-gray-50 py-20 px-4" data-aos="fade-up">
     <div class="max-w-7xl mx-auto">
       <h2 class="text-3xl md:text-4xl font-bold text-center text-charcoal">Why choose Grener Bio</h2>
+
+      <!-- Top row - 4 feature icons (unchanged) -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
         <div class="text-center"><div class="feature-icon mx-auto"><i class="fas fa-users"></i></div><h3 class="font-bold text-xl">Expert team</h3><p class="text-gray-500">IIT/IIM alumni & renewable energy engineers</p></div>
         <div class="text-center"><div class="feature-icon mx-auto"><i class="fas fa-rupee-sign"></i></div><h3 class="font-bold text-xl">Affordable pricing</h3><p class="text-gray-500">30% less than market, ROI in 18 months</p></div>
         <div class="text-center"><div class="feature-icon mx-auto"><i class="fas fa-tools"></i></div><h3 class="font-bold text-xl">Easy maintenance</h3><p class="text-gray-500">Annual service & remote monitoring</p></div>
         <div class="text-center"><div class="feature-icon mx-auto"><i class="fas fa-globe-asia"></i></div><h3 class="font-bold text-xl">Eco impact</h3><p class="text-gray-500">2 tonnes CO₂ saved per unit/year</p></div>
+      </div>
+
+      <!-- Trusted by government & institutions -->
+      <div class="mt-20">
+        <h3 class="text-2xl md:text-3xl font-bold text-center text-charcoal mb-10">Trusted by government & institutions</h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Project 1 - CCBF -->
+          <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border-l-4 border-green-brand">
+            <div class="flex items-start gap-3">
+              <div class="bg-green-100 rounded-full p-3">
+                <i class="fas fa-building text-green-brand text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-lg">CCBF</h4>
+                <p class="text-gray-600 text-sm">Alamathi, Chennai</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 - Gurunanak College -->
+          <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border-l-4 border-green-brand">
+            <div class="flex items-start gap-3">
+              <div class="bg-green-100 rounded-full p-3">
+                <i class="fas fa-school text-green-brand text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-lg">Gurunanak College</h4>
+                <p class="text-gray-600 text-sm">Velachery, Chennai</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 - Thivanai Ammal College -->
+          <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border-l-4 border-green-brand">
+            <div class="flex items-start gap-3">
+              <div class="bg-green-100 rounded-full p-3">
+                <i class="fas fa-university text-green-brand text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-lg">Thivanai Ammal Women's College</h4>
+                <p class="text-gray-600 text-sm">Villupuram</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4 - All The Children Trust -->
+          <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border-l-4 border-green-brand">
+            <div class="flex items-start gap-3">
+              <div class="bg-green-100 rounded-full p-3">
+                <i class="fas fa-heart text-green-brand text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-lg">All The Children Trust</h4>
+                <p class="text-gray-600 text-sm">OMR, Chennai</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5 - St. Thomas Home -->
+          <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border-l-4 border-green-brand">
+            <div class="flex items-start gap-3">
+              <div class="bg-green-100 rounded-full p-3">
+                <i class="fas fa-home text-green-brand text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-lg">St. Thomas Home for the Aged</h4>
+                <p class="text-gray-600 text-sm">Poonamallee, Chennai</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 6 - Tamilnadu Government -->
+          <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border-l-4 border-green-brand">
+            <div class="flex items-start gap-3">
+              <div class="bg-green-100 rounded-full p-3">
+                <i class="fas fa-govt text-green-brand text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-lg">Tamilnadu Government</h4>
+                <p class="text-gray-600 text-sm">Tiruvannamalai District</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Counter of total projects -->
+        <div class="text-center mt-12">
+          <div class="inline-flex items-center gap-4 bg-green-50 px-8 py-4 rounded-full">
+            <i class="fas fa-trophy text-3xl text-green-brand"></i>
+            <div>
+              <span class="text-2xl font-bold text-green-brand">50+</span>
+              <span class="text-gray-600 ml-2">Government & Institutional Projects Completed</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -532,9 +618,11 @@
   <footer class="bg-charcoal text-white pt-16 pb-8 px-6">
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
       <div>
-        <div class="flex items-center gap-2"><i class="fas fa-leaf text-3xl text-green-brand"></i><span class="font-bold text-2xl">Grener Bio</span></div>
+        <div class="flex items-center gap-2"><span class="font-bold text-2xl">Grener Bio</span></div>
         <p class="text-sm text-gray-400 mt-4"><i class="fas fa-map-pin mr-2"></i>31/16, Thiruvalluvar Street,<br>Nehru Nagar, Velachery,<br>Chennai - 600042</p>
-        <p class="text-sm text-gray-400 mt-2"><i class="fas fa-phone mr-2"></i>+91 8124820036</p>
+        <p class="text-sm text-gray-400 mt-2"><i class="fas fa-phone mr-2"></i>+91 9042580036</p>
+        <p class="text-sm text-gray-400 mt-2"><i class="fab fa-whatsapp mr-2 text-green-400"></i>+91 8124820036</p>
+
       </div>
       <div>
         <h4 class="font-bold text-lg">Quick links</h4>
@@ -558,8 +646,8 @@
         <h4 class="font-bold text-lg">Follow us</h4>
         <div class="flex gap-4 mt-4 text-2xl">
           <a href="#" class="footer-link"><i class="fab fa-linkedin"></i></a>
-          <a href="#" class="footer-link"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="footer-link"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.instagram.com/grener_bio?igsh=YXh0anA5bHU4em50" class="footer-link"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/share/1ApxjRhmuD/" class="footer-link"><i class="fab fa-facebook"></i></a>
         </div>
         <p class="text-xs text-gray-500 mt-8">© 2025 Grener Bio. All rights reserved.</p>
       </div>
