@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us - Grener Bio | Get in Touch</title>
-  <meta name="description" content="Contact Grener Bio for biogas consultations, inspections, and support. We're here to help you go green.">
+  <title>About Us - Grener Bio | Our Story & Team</title>
+  <meta name="description" content="Learn about Grener Bio's mission, vision, and the team behind India's most trusted biogas solutions.">
   <link rel="icon" type="image/png" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%232F855A'/%3E%3Cpath d='M30 60 L45 25 L60 60 L52 60 L45 40 L38 60Z' fill='white'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,359 +12,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <style>
-    /* Base Styles */
-    body {
-      font-family: 'Inter', 'Poppins', sans-serif;
-      color: #1e1e1e;
-      background-color: #ffffff;
-      scroll-behavior: smooth;
-    }
-    h1, h2, h3, .heading-font {
-      font-family: 'Poppins', 'Inter', sans-serif;
-      font-weight: 600;
-    }
-    .text-green-brand {
-      color: #2F855A;
-    }
-    .bg-green-brand {
-      background-color: #2F855A;
-    }
-    .border-green-brand {
-      border-color: #2F855A;
-    }
-    .bg-charcoal {
-      background-color: #2d2d2d;
-    }
-    .text-charcoal {
-      color: #2d2d2d;
-    }
-
-    /* Button Styles */
-    .btn-primary {
-      background-color: #2F855A;
-      color: white;
-      padding: 0.75rem 2rem;
-      border-radius: 9999px;
-      font-weight: 600;
-      transition: all 0.2s;
-      box-shadow: 0 4px 6px -1px rgba(47,133,90,0.2);
-      display: inline-block;
-    }
-    .btn-primary:hover {
-      background-color: #1f5f3f;
-      transform: translateY(-2px);
-      box-shadow: 0 10px 15px -3px rgba(47,133,90,0.3);
-    }
-    .btn-outline {
-      background-color: transparent;
-      border: 2px solid #2F855A;
-      color: #2F855A;
-      padding: 0.75rem 2rem;
-      border-radius: 9999px;
-      font-weight: 600;
-      transition: 0.2s;
-      display: inline-block;
-    }
-    .btn-outline:hover {
-      background-color: #2F855A;
-      color: white;
-    }
-
-    /* Navigation */
-    .sticky-nav {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(10px);
-      background-color: rgba(255,255,255,0.9);
-      border-bottom: 1px solid #eaeaea;
-    }
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      text-decoration: none;
-    }
-    .logo span {
-      font-weight: 700;
-      font-size: 1.5rem;
-      color: #2d2d2d;
-    }
-    .nav-menu {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    .nav-menu a {
-      font-weight: 500;
-      transition: color 0.2s;
-      position: relative;
-      padding: 0.5rem 0;
-      text-decoration: none;
-      color: #2d2d2d;
-    }
-    .nav-menu a:hover {
-      color: #2F855A;
-    }
-    .nav-menu a.active {
-      color: #2F855A;
-      font-weight: 600;
-    }
-    .nav-menu a.active::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background-color: #2F855A;
-      border-radius: 2px;
-    }
-
-    /* Mobile Drawer (Slide from Right) */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      background: none;
-      border: none;
-      z-index: 60;
-    }
-    .bar {
-      width: 25px;
-      height: 3px;
-      background-color: #2d2d2d;
-      transition: all 0.3s ease-in-out;
-    }
-    .hamburger.active .bar:nth-child(2) {
-      opacity: 0;
-    }
-    .hamburger.active .bar:nth-child(1) {
-      transform: translateY(8px) rotate(45deg);
-    }
-    .hamburger.active .bar:nth-child(3) {
-      transform: translateY(-8px) rotate(-45deg);
-    }
-
-    .mobile-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.4);
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s ease, visibility 0.3s;
-      z-index: 55;
-      backdrop-filter: blur(2px);
-    }
-    .mobile-overlay.active {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .mobile-nav-drawer {
-      position: fixed;
-      top: 0;
-      right: -320px;
-      width: 300px;
-      max-width: 80vw;
-      height: 100%;
-      background-color: white;
-      box-shadow: -10px 0 25px -5px rgba(0,0,0,0.2);
-      z-index: 56;
-      transition: right 0.3s ease-in-out;
-      padding: 2rem 1.5rem;
-      overflow-y: auto;
-    }
-    .mobile-nav-drawer.active {
-      right: 0;
-    }
-
-    .mobile-nav-drawer ul {
-      list-style: none;
-      margin-top: 2.5rem;
-    }
-    .mobile-nav-drawer li {
-      margin-bottom: 1.25rem;
-    }
-    .mobile-nav-drawer a {
-      text-decoration: none;
-      color: #2d2d2d;
-      font-weight: 500;
-      font-size: 1.1rem;
-      display: block;
-      padding: 0.5rem 0;
-      border-bottom: 1px solid #f0f0f0;
-      transition: color 0.2s;
-    }
-    .mobile-nav-drawer a:hover,
-    .mobile-nav-drawer a.active {
-      color: #2F855A;
-    }
-    .close-drawer-btn {
-      position: absolute;
-      top: 1.2rem;
-      right: 1.5rem;
-      font-size: 1.8rem;
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: #555;
-    }
-    .mobile-cta-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      margin-top: 2rem;
-    }
-    .mobile-cta-group a {
-      text-align: center;
-      margin: 0;
-      border-bottom: none !important;
-    }
-
-    @media(max-width:768px) {
-      .hamburger {
-        display: flex;
-      }
-      .nav-menu {
-        display: none;
-      }
-      .desktop-only {
-        display: none;
-      }
-    }
-
-    /* Form Styles */
-    .form-input {
-      width: 100%;
-      padding: 0.75rem 1rem;
-      border: 1px solid #e5e7eb;
-      border-radius: 9999px;
-      transition: border-color 0.2s;
-    }
-    .form-input:focus {
-      outline: none;
-      border-color: #2F855A;
-      ring: 2px solid #2F855A;
-    }
-    .form-textarea {
-      border-radius: 1.5rem;
-      min-height: 120px;
-      resize: vertical;
-    }
-
-    /* Feature Icon */
-    .feature-icon {
-      background-color: #e6f4ea;
-      color: #2F855A;
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-      margin-bottom: 1.5rem;
-    }
-
-    /* Footer */
-    .footer {
-      background-color: #2d2d2d;
-      color: white;
-      padding-top: 4rem;
-      padding-bottom: 2rem;
-    }
-    .footer-heading {
-      font-weight: 700;
-      font-size: 1.125rem;
-      margin-bottom: 1rem;
-    }
-    .footer-link {
-      color: #ccc;
-      transition: 0.2s;
-      text-decoration: none;
-    }
-    .footer-link:hover {
-      color: white;
-    }
-
-    /* Page Loader */
-    .page-loader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      transition: opacity 0.3s;
-    }
-    .loader-spinner {
-      width: 50px;
-      height: 50px;
-      border: 3px solid #f3f3f3;
-      border-top: 3px solid #2F855A;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-    }
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    /* Lead Popup */
-    #lead-popup {
-      transition: opacity 0.3s, transform 0.3s;
-      transform: translateY(0);
-    }
-    .popup-hidden {
-      opacity: 0 !important;
-      pointer-events: none;
-      transform: translateY(20px) !important;
-    }
-
-    /* Notification */
-    .notification {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      max-width: 400px;
-      padding: 1rem;
-      border-radius: 0.5rem;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-      z-index: 1000;
-      display: none;
-      animation: slideIn 0.3s ease;
-    }
-    @keyframes slideIn {
-      from {
-        transform: translateX(100%);
-        opacity: 0;
-      }
-      to {
-        transform: translateX(0);
-        opacity: 1;
-      }
-    }
-    .notification-success {
-      background-color: #10b981;
-      color: white;
-    }
-    .notification-error {
-      background-color: #ef4444;
-      color: white;
-    }
-  </style>
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
   <!-- Page Loader -->
@@ -372,34 +20,28 @@
     <div class="loader-spinner"></div>
   </div>
 
-  <!-- Notification Container -->
-  <div id="notification" class="notification"></div>
-
-  <!-- NAVIGATION (with slide from right drawer) -->
+  <!-- NAVIGATION -->
   <nav class="sticky-nav px-6 md:px-12 py-4 flex items-center justify-between">
     <a href="../index.html" class="logo">
       <img src="../logo1.png" alt="biogas" width="40" height="40" style="object-fit: contain;">
       <span>Grener Bio</span>
     </a>
 
-    <!-- Desktop Menu -->
     <ul class="nav-menu">
       <li><a href="../index.html">Home</a></li>
       <li><a href="products.html">Products</a></li>
-      <li><a href="services.html">Services</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="gallery.html">Gallery</a></li>
       <li><a href="installation.html">Installation</a></li>
       <li><a href="tutorials.html">Tutorials</a></li>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="about.html" class="active">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
 
     <div class="flex gap-3 items-center">
       <a href="contact.html" class="btn-primary desktop-only text-sm">Get Quote</a>
-      <a href="#inspection" class="btn-outline desktop-only text-sm">Book Inspection</a>
-      
-      <!-- Mobile Hamburger -->
+      <a href="contact.html#inspection" class="btn-outline desktop-only text-sm">Book Inspection</a>
       <button class="hamburger" id="hamburger">
         <span class="bar"></span>
         <span class="bar"></span>
@@ -408,209 +50,179 @@
     </div>
   </nav>
 
-  <!-- Mobile overlay & drawer (slide from right) -->
-  <div class="mobile-overlay" id="mobileOverlay"></div>
-  <div class="mobile-nav-drawer" id="mobileDrawer">
-    <button class="close-drawer-btn" id="closeDrawerBtn">&times;</button>
-    <ul>
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="products.html">Products</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="installation.html">Installation</a></li>
-      <li><a href="tutorials.html">Tutorials</a></li>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="contact.html" class="active">Contact</a></li>
-    </ul>
-    <div class="mobile-cta-group">
-      <a href="contact.html" class="btn-primary text-sm">Get Quote</a>
-      <a href="#inspection" class="btn-outline text-sm text-center">Book Inspection</a>
-    </div>
-  </div>
+  <!-- Mobile Menu -->
+  <ul class="mobile-nav-menu" id="mobileMenu">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="services.html" class="active">Services</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="installation.html">Installation</a></li>
+    <li><a href="tutorials.html">Tutorials</a></li>
+    <li><a href="about.html" class="active">About Us</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li class="flex gap-3 pt-4">
+      <a href="contact.html" class="btn-primary text-sm flex-1 text-center">Get Quote</a>
+      <a href="contact.html#inspection" class="btn-outline text-sm flex-1 text-center">Book Inspection</a>
+    </li>
+  </ul>
 
   <!-- PAGE HEADER -->
   <section class="bg-gradient-to-b from-green-50 to-white py-20 px-4">
     <div class="max-w-7xl mx-auto text-center" data-aos="fade-up">
-      <h1 class="text-5xl md:text-6xl font-bold text-charcoal mb-6">Contact Us</h1>
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto">Have questions? Ready to start your biogas journey? We're here to help.</p>
+      <h1 class="text-5xl md:text-6xl font-bold text-charcoal mb-6">About Grener Bio</h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">Making clean energy accessible to every Indian home and business since 2015.</p>
     </div>
   </section>
 
-  <!-- CONTACT GRID -->
+  <!-- MISSION & VISION -->
   <section class="py-20 px-4 bg-white">
     <div class="max-w-7xl mx-auto">
-      <div class="grid lg:grid-cols-3 gap-8">
-        <!-- Contact Info -->
-        <div class="lg:col-span-1 space-y-6" data-aos="fade-right">
-          <div class="bg-gray-50 rounded-3xl p-8">
-            <h2 class="text-2xl font-bold mb-6">Get in Touch</h2>
-
-            <div class="space-y-6">
-              <div class="flex items-start gap-4">
-                <div class="feature-icon w-12 h-12 text-xl">
-                  <i class="fas fa-map-pin"></i>
-                </div>
-                <div>
-                  <h3 class="font-semibold mb-1">Visit Us</h3>
-                  <p class="text-gray-600">31/16, Thiruvalluvar Street, <br>Nehru Nagar, Velachery,<br> Chennai - 600042</p>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-4">
-                <div class="feature-icon w-12 h-12 text-xl">
-                  <i class="fas fa-phone"></i>
-                </div>
-                <div>
-                  <h3 class="font-semibold mb-1">Call Us</h3>
-                  <p class="text-gray-600">+91 9042580036</p>
-                  <p class="text-gray-600">+91 8124820036 (WhatsApp)</p>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-4">
-                <div class="feature-icon w-12 h-12 text-xl">
-                  <i class="fas fa-envelope"></i>
-                </div>
-                <div>
-                  <h3 class="font-semibold mb-1">Email Us</h3>
-                  <p class="text-gray-600">tamilnadubiogas@gmail.com</p>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-4">
-                <div class="feature-icon w-12 h-12 text-xl">
-                  <i class="fas fa-clock"></i>
-                </div>
-                <div>
-                  <h3 class="font-semibold mb-1">Business Hours</h3>
-                  <p class="text-gray-600">Mon-Sat: 9:00 AM - 7:00 PM</p>
-                  <p class="text-gray-600">Sunday: Closed</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="mt-8 pt-6 border-t">
-              <h3 class="font-semibold mb-4">Follow Us</h3>
-              <div class="flex gap-4 text-2xl">
-                <a href="#" class="text-gray-400 hover:text-green-brand"><i class="fab fa-linkedin"></i></a>
-                <a href="https://www.instagram.com/grener_bio?igsh=YXh0anA5bHU4em50" class="text-gray-400 hover:text-green-brand"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.facebook.com/share/1ApxjRhmuD/" class="text-gray-400 hover:text-green-brand"><i class="fab fa-facebook"></i></a>
-              </div>
-            </div>
-          </div>
+      <div class="grid md:grid-cols-2 gap-12">
+        <div data-aos="fade-right">
+          <h2 class="text-3xl font-bold mb-6">Our Mission</h2>
+          <p class="text-gray-600 text-lg leading-relaxed">Our mission is to simplify biogas technology by providing a portable, government-approved, and self-serviceable kit. We are committed to lowering the barrier to renewable energy, enabling anyone with a basic HDPE tank and local materials to build their own efficient biogas system and actively participate in a circular economy.</p>
         </div>
-
-        <!-- Contact Form -->
-        <div class="lg:col-span-2" data-aos="fade-left">
-          <div class="bg-white rounded-3xl shadow-xl p-8">
-            <h2 class="text-2xl font-bold mb-6">Send us a Message</h2>
-
-            <form id="contactForm" class="space-y-6">
-              <div class="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label class="block font-medium mb-2">Full Name *</label>
-                  <input type="text" name="name" required class="form-input">
-                </div>
-                <div>
-                  <label class="block font-medium mb-2">Email Address *</label>
-                  <input type="email" name="email" required class="form-input">
-                </div>
-              </div>
-
-              <div class="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label class="block font-medium mb-2">Phone Number *</label>
-                  <input type="tel" name="phone" required class="form-input">
-                </div>
-                <div>
-                  <label class="block font-medium mb-2">City *</label>
-                  <input type="text" name="city" required class="form-input">
-                </div>
-              </div>
-
-              <div>
-                <label class="block font-medium mb-2">I'm interested in *</label>
-                <select name="interest" class="form-input">
-                  <option>Home Biogas System</option>
-                  <option>Community Biogas</option>
-                  <option>Industrial Biogas</option>
-                  <option>Installation Services</option>
-                  <option>Maintenance/AMC</option>
-                  <option>Other</option>
-                </select>
-              </div>
-
-              <div>
-                <label class="block font-medium mb-2">Message *</label>
-                <textarea name="message" rows="5" required class="form-input form-textarea"></textarea>
-              </div>
-
-              <div>
-                <button type="submit" class="btn-primary w-full" id="submitBtn">Send Message</button>
-              </div>
-            </form>
-          </div>
+        <div data-aos="fade-left">
+          <h2 class="text-3xl font-bold mb-6">Our Vision</h2>
+          <p class="text-gray-600 text-lg leading-relaxed">To empower every household and community to transform organic waste into a source of renewable energy, creating a world where clean, self-sufficient, and sustainable living is accessible to all.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- BOOK INSPECTION SECTION -->
-  <section id="inspection" class="py-20 px-4 bg-gray-50">
-    <div class="max-w-4xl mx-auto">
-      <div class="bg-white rounded-3xl shadow-xl p-8" data-aos="fade-up">
-        <div class="text-center mb-8">
-          <h2 class="text-3xl font-bold mb-4">Book a Free Site Inspection</h2>
-          <p class="text-gray-600">Our engineer will visit your location, assess your needs, and provide a custom quote.</p>
+  <!-- VALUES -->
+  <section class="py-20 px-4 bg-gray-50">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-charcoal mb-16" data-aos="fade-up">Our Core Values</h2>
+
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="text-center" data-aos="fade-up">
+          <div class="feature-icon mx-auto">
+            <i class="fas fa-leaf"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Sustainability</h3>
+          <p class="text-gray-600">Committed to environmental impact through every installation.</p>
         </div>
 
-        <form id="inspectionForm" class="grid md:grid-cols-2 gap-6">
-          <div>
-            <input type="text" name="name" placeholder="Full Name *" required class="form-input">
+        <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+          <div class="feature-icon mx-auto">
+            <i class="fas fa-hand-holding-heart"></i>
           </div>
-          <div>
-            <input type="email" name="email" placeholder="Email Address *" required class="form-input">
+          <h3 class="text-xl font-bold mb-2">Integrity</h3>
+          <p class="text-gray-600">Honest advice, transparent pricing, and quality products.</p>
+        </div>
+
+        <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+          <div class="feature-icon mx-auto">
+            <i class="fas fa-flask"></i>
           </div>
-          <div>
-            <input type="tel" name="phone" placeholder="Phone Number *" required class="form-input">
+          <h3 class="text-xl font-bold mb-2">Innovation</h3>
+          <p class="text-gray-600">Continuous R&D to improve efficiency and user experience.</p>
+        </div>
+
+        <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+          <div class="feature-icon mx-auto">
+            <i class="fas fa-users"></i>
           </div>
-          <div>
-            <input type="text" name="city" placeholder="City *" required class="form-input">
-          </div>
-          <div>
-            <select name="preferred_date" class="form-input">
-              <option value="">Preferred Date (Weekday)</option>
-              <option value="Monday">Monday</option>
-              <option value="Tuesday">Tuesday</option>
-              <option value="Wednesday">Wednesday</option>
-              <option value="Thursday">Thursday</option>
-              <option value="Friday">Friday</option>
-              <option value="Saturday">Saturday</option>
-            </select>
-          </div>
-          <div>
-            <select name="preferred_time" class="form-input">
-              <option value="">Preferred Time</option>
-              <option value="9AM-12PM">9 AM - 12 PM</option>
-              <option value="12PM-3PM">12 PM - 3 PM</option>
-              <option value="3PM-6PM">3 PM - 6 PM</option>
-            </select>
-          </div>
-          <div class="md:col-span-2">
-            <textarea name="notes" placeholder="Additional notes or requirements" class="form-input form-textarea"></textarea>
-          </div>
-          <div class="md:col-span-2">
-            <button type="submit" class="btn-primary w-full" id="inspectionSubmitBtn">Request Inspection</button>
-          </div>
-        </form>
+          <h3 class="text-xl font-bold mb-2">Community</h3>
+          <p class="text-gray-600">Building a network of clean energy champions across India.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- MAP -->
-  <section class="h-96 bg-gray-200">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.123456789!2d77.6!3d12.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDU0JzAwLjAiTiA3N8KwMzYnMDAuMCJF!5e0!3m2!1sen!2sin!4v1234567890" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  <!-- TEAM SECTION -->
+<section class="py-20 px-4 bg-white">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold text-center text-charcoal mb-16" data-aos="fade-up">
+      Meet Our Leadership
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-8 justify-items-center">
+
+      <!-- Team Member 1 -->
+      <div class="team-card max-w-sm" data-aos="fade-up">
+        <div class="team-image flex justify-center mb-4">
+          <img src="../person1.png" alt="Rajesh Kumar" class="w-32 h-32 rounded-full object-cover">
+        </div>
+
+        <h3 class="text-2xl font-bold text-center">Rajesh Kumar</h3>
+        <p class="text-green-brand font-semibold mb-4 text-center">& CEO</p>
+        <p class="text-gray-600 text-sm text-center">
+          IIT Delhi alumnus with 10 years in renewable energy. Passionate about sustainable solutions for urban India.
+        </p>
+      </div>
+
+      <!-- Team Member 2 -->
+      <div class="team-card max-w-sm" data-aos="fade-up">
+        <div class="team-image flex justify-center mb-4">
+          <img src="../person2.png" alt="Rajesh Kumar" class="w-32 h-32 rounded-full object-cover">
+        </div>
+
+        <h3 class="text-2xl font-bold text-center">Rajesh Kumar</h3>
+        <p class="text-green-brand font-semibold mb-4 text-center">Founder & CEO</p>
+        <p class="text-gray-600 text-sm text-center">
+          IIT Delhi alumnus with 15 years in renewable energy. Passionate about sustainable solutions for urban India.
+        </p>
+      </div>
+
+
+      <!-- Team Member 3 -->
+      <div class="team-card max-w-sm" data-aos="fade-up" data-aos-delay="150">
+        <div class="team-image">
+          <img src="../person3.png" alt="Rajesh Kumar" class="w-32 h-32 rounded-full object-cover">
+        </div>
+        <h3 class="text-2xl font-bold">Santhosh R Menon</h3>
+        <p class="text-green-brand font-semibold mb-4">CTO</p>
+        <p class="text-gray-600 text-sm">
+          Biogas technology expert with patents in anaerobic digestion. Leads our R&D and innovation initiatives.
+        </p>
+      </div>
+
+      <!-- Team Member 4 (Centered) -->
+      <div class="team-card max-w-sm md:col-span-3 flex justify-center" data-aos="fade-up" data-aos-delay="200">
+        <div>
+          <div class="team-image">
+          <img src="/home/mila/backup/grenerbgas-creator.github.io/person2.png" alt="Rajesh Kumar" class="w-32 h-32 rounded-full object-cover">
+          </div>
+          <h3 class="text-2xl font-bold text-center">Prof. Dr. Er. S. KAMARAJ</h3>
+          <p class="text-green-brand font-semibold mb-4 text-center">Head, Department of Bio-energy</p>
+          <p class="text-gray-600 text-sm text-center">
+            Ex. Professor of Tamilnadu Agricultural University and presently Director, International Institute of Renewable Energy,
+            NERD Society, Vadavalli, Coimbatore.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- MILESTONES -->
+  <section class="py-20 px-4 bg-gray-50">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-charcoal mb-16" data-aos="fade-up">Our Impact</h2>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="text-center" data-aos="fade-up">
+          <div class="text-5xl font-bold text-green-brand mb-2">500+</div>
+          <p class="text-gray-600">Installations</p>
+        </div>
+        <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+          <div class="text-5xl font-bold text-green-brand mb-2">30+</div>
+          <p class="text-gray-600">Cities</p>
+        </div>
+        <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+          <div class="text-5xl font-bold text-green-brand mb-2">1000T</div>
+          <p class="text-gray-600">CO₂ Saved</p>
+        </div>
+        <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+          <div class="text-5xl font-bold text-green-brand mb-2">10+</div>
+          <p class="text-gray-600">Years Experience</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- FOOTER -->
@@ -620,7 +232,7 @@
         <div class="flex items-center gap-2 mb-4">
           <span class="font-bold text-2xl">Grener Bio</span>
         </div>
-        <p class="text-sm text-gray-400"><i class="fas fa-map-pin mr-2"></i>31/16, Thiruvalluvar Street, Nehru Nagar, Velachery, Chennai - 600042</p>
+        <p class="text-sm text-gray-400"><i class="fas fa-map-pin mr-2"></i>31/16, Thiruvalluvar Street,<br>Nehru Nagar, Velachery,<br>Chennai - 600042.</p>
         <p class="text-sm text-gray-400 mt-2"><i class="fas fa-phone mr-2"></i>+91 9042580036</p>
         <p class="text-sm text-gray-400 mt-2"><i class="fab fa-whatsapp mr-2 text-green-400"></i>+91 8124820036</p>
       </div>
@@ -644,8 +256,8 @@
         <h4 class="footer-heading">Follow us</h4>
         <div class="flex gap-4 text-2xl">
           <a href="#" class="footer-link"><i class="fab fa-linkedin"></i></a>
-          <a href="#" class="footer-link"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="footer-link"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.instagram.com/grener_bio?igsh=YXh0anA5bHU4em50" class="footer-link"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/share/1ApxjRhmuD/" class="footer-link"><i class="fab fa-facebook"></i></a>
         </div>
         <p class="text-xs text-gray-500 mt-8">© 2025 Grener Bio. All rights reserved.</p>
       </div>
@@ -654,234 +266,9 @@
 
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="../js/main.js"></script>
   <script>
-    // Initialize AOS
     AOS.init({ duration: 1000, once: true });
-
-    // Page loader
-    window.addEventListener('load', function() {
-      const loader = document.getElementById('page-loader');
-      if (loader) {
-        loader.style.opacity = '0';
-        setTimeout(() => {
-          loader.style.display = 'none';
-        }, 300);
-      }
-    });
-
-    // Mobile drawer functionality (slide from right)
-    const hamburger = document.getElementById('hamburger');
-    const mobileDrawer = document.getElementById('mobileDrawer');
-    const mobileOverlay = document.getElementById('mobileOverlay');
-    const closeDrawerBtn = document.getElementById('closeDrawerBtn');
-
-    function openDrawer() {
-      hamburger.classList.add('active');
-      mobileDrawer.classList.add('active');
-      mobileOverlay.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeDrawer() {
-      hamburger.classList.remove('active');
-      mobileDrawer.classList.remove('active');
-      mobileOverlay.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-
-    if (hamburger) {
-      hamburger.addEventListener('click', openDrawer);
-    }
-    if (closeDrawerBtn) {
-      closeDrawerBtn.addEventListener('click', closeDrawer);
-    }
-    if (mobileOverlay) {
-      mobileOverlay.addEventListener('click', closeDrawer);
-    }
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && mobileDrawer.classList.contains('active')) {
-        closeDrawer();
-      }
-    });
-
-    // Close drawer when clicking on a link
-    const drawerLinks = document.querySelectorAll('.mobile-nav-drawer a');
-    drawerLinks.forEach(link => {
-      link.addEventListener('click', closeDrawer);
-    });
-
-    // Lead popup
-    setTimeout(() => {
-      const popup = document.getElementById('lead-popup');
-      if (popup) {
-        popup.classList.remove('popup-hidden');
-      }
-    }, 5000);
-
-    // Close popup
-    const closePopup = document.getElementById('close-popup');
-    if (closePopup) {
-      closePopup.addEventListener('click', function() {
-        document.getElementById('lead-popup').classList.add('popup-hidden');
-      });
-    }
-
-    // Notification function
-    function showNotification(type, message) {
-      const notification = document.getElementById('notification');
-      notification.className = `notification notification-${type}`;
-      notification.innerHTML = `<div class="flex items-center gap-3"><i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'} text-xl"></i><span>${message}</span></div>`;
-      notification.style.display = 'block';
-
-      setTimeout(() => {
-        notification.style.display = 'none';
-      }, 5000);
-    }
-
-    // Discord webhook
-    const DISCORD_WEBHOOK = "https://discord.com/api/webhooks/1474312378156978250/rHobjr4dADVBi_bLq3LFDu_rIKvwkG8LUYqgn_K0gXiK_rb-01BhjRF7XirVdOmhzi5L";
-
-    async function sendToDiscord(payload) {
-      const discordPayload = {
-        username: "Grener Bio Website",
-        embeds: [{
-          title: payload.form_type === "inspection" ? "🔍 New Site Inspection Request" :
-                 payload.form_type === "guide" ? "📚 Free Guide Download" : "📩 New Contact Form Submission",
-          color: payload.form_type === "inspection" ? 16776960 :
-                 payload.form_type === "guide" ? 3066993 : 3447003,
-          fields: [
-            { name: "👤 Name", value: payload.name || "N/A", inline: true },
-            { name: "📧 Email", value: payload.email || "N/A", inline: true },
-            { name: "📞 Phone", value: payload.phone || "N/A", inline: true },
-            { name: "🏙️ City", value: payload.city || "N/A", inline: true }
-          ],
-          timestamp: new Date().toISOString()
-        }]
-      };
-
-      if (payload.form_type === "inspection") {
-        discordPayload.embeds[0].fields.push(
-          { name: "📅 Preferred Date", value: payload.preferred_date || "Not specified", inline: true },
-          { name: "⏰ Preferred Time", value: payload.preferred_time || "Not specified", inline: true },
-          { name: "📝 Notes", value: payload.notes || "None", inline: false }
-        );
-      } else if (payload.form_type === "contact") {
-        discordPayload.embeds[0].fields.push(
-          { name: "📌 Interest", value: payload.interest || "N/A", inline: true },
-          { name: "📝 Message", value: payload.message || "N/A", inline: false }
-        );
-      }
-
-      const response = await fetch(DISCORD_WEBHOOK, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(discordPayload)
-      });
-
-      if (!response.ok) throw new Error('Discord webhook failed');
-      return response;
-    }
-
-    // Contact Form
-    document.getElementById("contactForm").addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const form = e.target;
-      const submitBtn = document.getElementById("submitBtn");
-
-      const payload = {
-        name: form.name.value,
-        email: form.email.value,
-        phone: form.phone.value,
-        city: form.city.value,
-        interest: form.interest.value,
-        message: form.message.value,
-        form_type: "contact"
-      };
-
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
-
-      try {
-        await sendToDiscord(payload);
-        showNotification('success', '✅ Message sent successfully! We\'ll get back to you soon.');
-        form.reset();
-      } catch (err) {
-        showNotification('error', '❌ Failed to send. Please email us directly at tamilnadubiogas@gmail.com');
-        console.error(err);
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = 'Send Message';
-      }
-    });
-
-    // Inspection Form
-    document.getElementById("inspectionForm").addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const form = e.target;
-      const submitBtn = document.getElementById("inspectionSubmitBtn");
-
-      const payload = {
-        name: form.name.value,
-        email: form.email.value,
-        phone: form.phone.value,
-        city: form.city.value,
-        preferred_date: form.preferred_date.value,
-        preferred_time: form.preferred_time.value,
-        notes: form.notes.value,
-        form_type: "inspection"
-      };
-
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Submitting...';
-
-      try {
-        await sendToDiscord(payload);
-        showNotification('success', '✅ Inspection request sent! Our team will contact you to confirm.');
-        form.reset();
-      } catch (err) {
-        showNotification('error', '❌ Failed to send. Please call us at +91 8124820036');
-        console.error(err);
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = 'Request Inspection';
-      }
-    });
-
-    // Popup Form
-    document.getElementById("popupForm").addEventListener("submit", async (e) => {
-      e.preventDefault();
-
-      const email = document.getElementById("popupEmail").value;
-      const submitBtn = document.getElementById("popupSubmitBtn");
-      const popupMessage = document.getElementById("popupMessage");
-
-      const payload = {
-        name: "Guide Download",
-        email: email,
-        phone: "N/A",
-        city: "N/A",
-        form_type: "guide"
-      };
-
-      submitBtn.disabled = true;
-      const originalText = submitBtn.innerHTML;
-      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-
-      try {
-        await sendToDiscord(payload);
-        popupMessage.innerHTML = '<span class="text-green-600">✅ Guide sent! Check your inbox.</span>';
-        setTimeout(() => {
-          document.getElementById("lead-popup").classList.add("popup-hidden");
-          popupMessage.innerHTML = '';
-        }, 2000);
-      } catch (err) {
-        popupMessage.innerHTML = '<span class="text-red-600">❌ Failed. Email us directly.</span>';
-        console.error(err);
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = originalText;
-      }
-    });
   </script>
 </body>
 </html>
